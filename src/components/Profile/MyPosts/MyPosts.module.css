@@ -1,0 +1,19 @@
+.postsTitle {
+    margin-bottom: 20px;
+}
+
+.postAdd {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 400px;
+}
+
+.postAdd textarea {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.postAdd button {
+    width: 100px;
+}

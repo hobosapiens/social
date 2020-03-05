@@ -1,0 +1,9 @@
+.header {
+    grid-area: h;
+    background-color: lightgray;
+    padding: 20px;
+}
+
+.header img {
+    max-height: 100%;
+}
