@@ -1,0 +1,36 @@
+.friend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% / 3);
+    padding: 10px 0;
+}
+
+.avaWrap {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+.avaWrap img {
+    max-width: none;
+    min-width: 100%;
+    filter: grayscale(1);
+}
+
+.friend a {
+    text-decoration: none;
+    color: #000;
+}
+
+.friend:hover img {
+    filter: none;
+}
+
+.friend:hover .avaWrap {
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.3);
+}

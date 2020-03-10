@@ -16,9 +16,35 @@ let state = {
             {id: 6, name: 'Эйприл'}
         ],
         messages: [
-            {id: 1,message: 'Accusamus amet aperiam consequuntur corporis cum distinctio id ipsum, iure nemo nostrum numquam quaerat qui ullam voluptatem voluptatibus. Cum eligendi laudantium qui.'},
-            {id: 2,message: 'Ab consequatur ipsum quidem reprehenderit similique. Animi dolorem eius ex iusto minima molestias, nesciunt nulla qui quibusdam repellendus sequi tenetur vitae voluptate.'},
-            {id: 3,message: 'A ad cum cumque eaque, error esse harum impedit iste, mollitia nostrum odio placeat praesentium quam quia reiciendis sunt temporibus totam unde.'},
+            {id: 1, senderClass: 'me', message: 'Accusamus amet aperiam consequuntur corporis cum distinctio id ipsum, iure nemo nostrum.'},
+            {id: 2, senderClass: 'interlocutor', message: 'Ab consequatur ipsum quidem reprehenderit similique. Animi dolorem eius ex.'},
+            {id: 3, senderClass: 'me', message: 'A ad cum cumque eaque.'},
+            {id: 4, senderClass: 'me', message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, at corporis cum cumque.'},
+            {id: 5, senderClass: 'interlocutor', message: 'Asperiores at aut cupiditate!'},
+        ]
+    },
+    navbar: {
+        friendList: [
+            {
+                id: 1,
+                name: 'Шредер',
+                avaSrc: 'https://i.ytimg.com/vi/z9U-E5gpbt4/maxresdefault.jpg'
+            },
+            {
+                id: 2,
+                name: 'Бибоп',
+                avaSrc: 'https://www.turtlepower.ru/picture.php?albumid=438&pictureid=13811'
+            },
+            {
+                id: 3,
+                name: 'Рокстэди',
+                avaSrc: 'https://24smi.org/public/media/resize/800x-/person/2018/06/16/ulvuirmoxmtv-rokstedi.jpg'
+            },
+            {
+                id: 4,
+                name: 'Крэнг',
+                avaSrc: 'https://24smi.org/public/media/resize/800x-/2018/6/20/imgonline-com-ua-resize-bd1yyb36mkjc.jpg'
+            }
         ]
     }
 };

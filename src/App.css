@@ -2,7 +2,7 @@
     display: grid;
     grid-template-areas: "h h" "n c" "f f";
     grid-template-rows: 100px 1fr 100px;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 280px 10fr;
     grid-gap: 10px;
     max-width: 1200px;
     margin: 0 auto;
@@ -18,4 +18,16 @@
 
 img {
     max-width: 100%;
+}
+
+.interlocutor {
+    padding: 5px;
+    background: #f2f2f2;
+    text-align: right;
+    display: inline;
+}
+
+.me {
+    padding: 5px;
+    display: inline;
 }
