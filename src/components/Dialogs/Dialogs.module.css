@@ -38,3 +38,20 @@
 .message {
     margin-bottom: 10px;
 }
+
+.addMessage {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-top: 40px;
+}
+
+.addMessage textarea {
+    height: 60px;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.addMessage button {
+    width: 100px;
+}

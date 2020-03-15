@@ -1,4 +1,7 @@
+import {rerenderEntireTree} from "../render";
+
 // Данные. Их я прокидываю через пропсы [ dialogsElements я закидываю в диалогс через posts={posts} ]
+
 let state = {
     profilePage: {
         posts: [
@@ -47,6 +50,18 @@ let state = {
             }
         ]
     }
+};
+
+export let addPost = (postMessage) => {
+
+    let newPost = {
+        id: 5,
+        likeCount: 0,
+        post: postMessage
+    };
+
+    state.profilePage.posts.push(newPost);
+    rerenderEntireTree(state);
 };
 
 export default state;

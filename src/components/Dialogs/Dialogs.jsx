@@ -5,20 +5,31 @@ import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message'
 
-
 const Dialogs = (props) => {
 
     // Проходимся .map по массиву данных и создаем массив jsx элементов. Далее передаем их через пропсы в нужные компоненты.
-    let dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name} id={d.id} key={d.id} />);
-    let messagesElements = props.state.messages.map(m => <Message message={m.message} id={m.id} key={m.id} senderClass={m.senderClass} />);
+    let dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name} id={d.id} key={d.id}/>);
+    let messagesElements = props.state.messages.map(m => <Message message={m.message} id={m.id} key={m.id}
+                                                                  senderClass={m.senderClass}/>);
+
+    let newMessageElement = React.createRef();
+
+    let addMessage = () => {
+        let text = newMessageElement.current.value;
+        alert(`New post: ${text}`);
+    };
 
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                { dialogsElements }
+                {dialogsElements}
             </div>
             <div className={s.messages}>
-                { messagesElements }
+                {messagesElements}
+                <div className={s.addMessage}>
+                    <textarea ref={newMessageElement} cols="30" rows="10"/>
+                    <button onClick={addMessage}>Add message</button>
+                </div>
             </div>
         </div>
     )
