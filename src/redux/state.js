@@ -7,7 +7,8 @@ let state = {
         posts: [
             {id: 1, likeCount: 22, post: 'Commodi earum eligendi impedit itaque nisi nostrum placeat? Debitis delectus eos laborum, quae saepe tempore? Architecto molestiae nostrum quibusdam sunt vel! Quibusdam.'},
             {id: 2, likeCount: 13, post: 'Aut illum impedit sit tenetur. Aliquam beatae consectetur, corporis eaque, est excepturi in iure laboriosam laudantium minima possimus reprehenderit sunt tenetur, ut.'},
-        ]
+        ],
+        newPostText: 'Post text...'
     },
     dialogsPage: {
         dialogs: [
@@ -52,15 +53,26 @@ let state = {
     }
 };
 
-export let addPost = (postMessage) => {
+window.state = state;
+
+export let addPost = () => {
 
     let newPost = {
         id: 5,
         likeCount: 0,
-        post: postMessage
+        post: state.profilePage.newPostText
     };
 
-    state.profilePage.posts.push(newPost);
+    if(state.profilePage.newPostText){
+        state.profilePage.posts.push(newPost);
+    }
+    state.profilePage.newPostText = '';
+    rerenderEntireTree(state);
+};
+
+export let updatePostText = (newText) => {
+
+    state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 };
 

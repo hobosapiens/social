@@ -3,15 +3,8 @@ import s from './ProfileInfo.module.css';
 
 const ProfileInfo = (props) => {
     return (
-        <div>
-            <div className={s.imageBlock}>
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/6/62/Berkeley-San_Francisco-Oakland--Sunset-Panorama.jpg"
-                    alt=""/>
-            </div>
-            <div className={s.descriptionBlock}>
-                ava + desccription
-            </div>
+        <div className={s.descriptionBlock}>
+            ava + desccription
         </div>
     )
 };

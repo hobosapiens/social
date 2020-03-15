@@ -1,3 +1,11 @@
+.posts {
+    padding: 20px;
+}
+
+.posts h3 {
+    margin: 0;
+}
+
 .postsTitle {
     margin-bottom: 20px;
 }
