@@ -25,7 +25,8 @@ let state = {
             {id: 3, senderClass: 'me', message: 'A ad cum cumque eaque.'},
             {id: 4, senderClass: 'me', message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, at corporis cum cumque.'},
             {id: 5, senderClass: 'interlocutor', message: 'Asperiores at aut cupiditate!'},
-        ]
+        ],
+        newMessageText: 'Message text...'
     },
     navbar: {
         friendList: [
@@ -73,6 +74,27 @@ export let addPost = () => {
 export let updatePostText = (newText) => {
 
     state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+};
+
+export let addMessage = () => {
+
+    let newMessge = {
+        id: 5,
+        senderClass: 'me',
+        message: state.dialogsPage.newMessageText
+    };
+
+    if(state.dialogsPage.newMessageText){
+        state.dialogsPage.messages.push(newMessge);
+    }
+    state.dialogsPage.newMessageText = '';
+    rerenderEntireTree(state);
+};
+
+export let updateMessageText = (newText) => {
+
+    state.dialogsPage.newMessageText = newText;
     rerenderEntireTree(state);
 };
 
