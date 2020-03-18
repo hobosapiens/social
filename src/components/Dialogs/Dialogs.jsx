@@ -6,7 +6,6 @@ import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message'
 
 const Dialogs = (props) => {
-
     // Проходимся .map по массиву данных и создаем массив jsx элементов. Далее передаем их через пропсы в нужные компоненты.
     let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem name={d.name} id={d.id} key={d.id}/>);
     let messagesElements = props.dialogsPage.messages.map(m => <Message message={m.message} id={m.id} key={m.id} senderClass={m.senderClass}/>);
@@ -21,7 +20,7 @@ const Dialogs = (props) => {
     let onMessageChange = () => {
         let text = newMessageElement.current.value;
         props.updateMessageText(text);
-    }
+    };
 
     return (
         <div className={s.dialogs}>
