@@ -50,9 +50,17 @@ let store = {
             ]
         }
     },
+    _callSubscriber() {
+        console.log('state changed')
+    },
+
+    subscribe(observer) {
+        this._callSubscriber = observer;
+    },
     getState() {
         return this._state;
     },
+    
     addPost() {
         let newPost = {
             id: 5,
@@ -63,11 +71,11 @@ let store = {
             this._state.profilePage.posts.push(newPost);
         }
         this._state.profilePage.newPostText = '';
-        this.renderPage(this._state);
+        this._callSubscriber(this._state);
     },
     updatePostText(newText) {
         this._state.profilePage.newPostText = newText;
-        this.renderPage(this._state);
+        this._callSubscriber(this._state);
 },
     addMessage() {
         let newMessge = {
@@ -79,18 +87,12 @@ let store = {
             this._state.dialogsPage.messages.push(newMessge);
         }
         this._state.dialogsPage.newMessageText = '';
-        this.renderPage(this._state);
+        this._callSubscriber(this._state);
     },
     updateMessageText(newText) {
         this._state.dialogsPage.newMessageText = newText;
-            this.renderPage(this._state);
-    },
-    renderPage() {
-        console.log('state changed')
-    },
-    subscribe(observer) {
-        this.renderPage = observer;
-    },
+            this._callSubscriber(this._state);
+    }
 };
 
 window.store = store;
