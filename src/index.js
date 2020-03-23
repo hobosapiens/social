@@ -13,8 +13,6 @@ export let renderPage = () => {
         </BrowserRouter>, document.getElementById('root'));
 }
 
-console.log(store);
-
 renderPage(store.getState());
 
 store.subscribe(renderPage);

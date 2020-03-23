@@ -57,45 +57,42 @@ let store = {
         let newPost = {
             id: 5,
             likeCount: 0,
-            post: state.profilePage.newPostText
+            post: this._state.profilePage.newPostText
         };
-        if(state.profilePage.newPostText){
-            state.profilePage.posts.push(newPost);
+        if(this._state.profilePage.newPostText){
+            this._state.profilePage.posts.push(newPost);
         }
-        state.profilePage.newPostText = '';
-        renderPage(state);
+        this._state.profilePage.newPostText = '';
+        this.renderPage(this._state);
     },
     updatePostText(newText) {
-        state.profilePage.newPostText = newText;
-         renderPage(state);
+        this._state.profilePage.newPostText = newText;
+        this.renderPage(this._state);
 },
     addMessage() {
         let newMessge = {
             id: 5,
             senderClass: 'me',
-            message: state.dialogsPage.newMessageText
+            message: this._state.dialogsPage.newMessageText
         };
-        if(state.dialogsPage.newMessageText){
-            state.dialogsPage.messages.push(newMessge);
+        if(this._state.dialogsPage.newMessageText){
+            this._state.dialogsPage.messages.push(newMessge);
         }
-        state.dialogsPage.newMessageText = '';
-        renderPage(state);
+        this._state.dialogsPage.newMessageText = '';
+        this.renderPage(this._state);
     },
     updateMessageText(newText) {
-        state.dialogsPage.newMessageText = newText;
-            renderPage(state);
+        this._state.dialogsPage.newMessageText = newText;
+            this.renderPage(this._state);
+    },
+    renderPage() {
+        console.log('state changed')
     },
     subscribe(observer) {
-        renderPage = observer;
-    }
+        this.renderPage = observer;
+    },
 };
 
 window.store = store;
-
-let state = store.getState();
-
-let renderPage = () => {
-    console.log('state changed')
-};
 
 export default store;
