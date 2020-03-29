@@ -9,11 +9,7 @@ const Profile = (props) => {
         <div className={s.profile}>
             <ProfileImg />
             <ProfileInfo />
-            <MyPosts posts={ props.profilePage.posts }
-                     newPostText={ props.profilePage.newPostText }
-                     addPost={ props.addPost }
-                     updatePostText={ props.updatePostText }
-            />
+            <MyPosts posts={ props.profilePage } dispatch={props.dispatch} />
         </div>
     )
 };

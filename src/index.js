@@ -9,7 +9,7 @@ import './index.css';
 export let renderPage = () => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={store.getState()} store={store} />
+            <App state={store.getState()} dispatch={store.dispatch.bind(store)} />
         </BrowserRouter>, document.getElementById('root'));
 }
 
