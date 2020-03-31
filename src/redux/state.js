@@ -1,3 +1,8 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+
 let store = {
     _state: {
         profilePage: {
@@ -40,12 +45,12 @@ let store = {
                 {
                     id: 3,
                     name: 'Рокстэди',
-                    avaSrc: 'https://24smi.org/public/media/resize/800x-/person/2018/06/16/ulvuirmoxmtv-rokstedi.jpg'
+                    avaSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTAr3oC1OiCyifyyBR1lhSiZXSOe0E0VU3fvu0PuShnh024Bhy1&usqp=CAU'
                 },
                 {
                     id: 4,
                     name: 'Крэнг',
-                    avaSrc: 'https://24smi.org/public/media/resize/800x-/2018/6/20/imgonline-com-ua-resize-bd1yyb36mkjc.jpg'
+                    avaSrc: 'https://citaty.info/files/characters/45003.jpg'
                 }
             ]
         }
@@ -93,6 +98,13 @@ let store = {
         }
     }
 };
+
+export const addPostActionCreator = () => ({ type: ADD_POST });
+export const updateNewPostTextActionCreator = (text) =>
+    ({ type: UPDATE_NEW_POST_TEXT,newText: text });
+export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
+export const updateNewMessageTextActionCreator = (text) =>
+    ({ type: UPDATE_NEW_MESSAGE_TEXT, newText: text});
 
 window.store = store;
 
