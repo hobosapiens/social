@@ -5,7 +5,7 @@ import s from './Navbar.module.css';
 import NavbarFriendlist from "./NavbarFriendlist/NavbarFriendlist";
 
 const Navbar = (props) => {
-    let friendsItems = props.state.friendList.map(f => <NavbarFriendlist name={f.name} id={f.id} key={f.id} avaSrc={f.avaSrc} />);
+    let friendsItems = props.state.navbar.friendList.map(f => <NavbarFriendlist name={f.name} id={f.id} key={f.id} avaSrc={f.avaSrc} />);
     return (
         <nav className={s.nav}>
             <div className={s.menu}>
