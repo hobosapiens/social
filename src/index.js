@@ -7,7 +7,7 @@ import App from './App';
 import './index.css';
 import {Provider} from "./StoreContext";
 
-export let renderPage = (state) => {
+export let renderPage = () => {
     ReactDOM.render(
         <BrowserRouter>
             <Provider store={store}>
@@ -16,9 +16,8 @@ export let renderPage = (state) => {
         </BrowserRouter>, document.getElementById('root'));
 }
 
-renderPage(store.getState());
+renderPage();
 
 store.subscribe( () => {
-    let state = store.getState();
-    renderPage(state);
+    renderPage();
 });
