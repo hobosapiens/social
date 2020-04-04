@@ -5,11 +5,14 @@ import store from './redux/redux-store';
 
 import App from './App';
 import './index.css';
+import StoreContext from "./StoreContext";
 
 export let renderPage = (state) => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={state} store={store} dispatch={store.dispatch.bind(store)} />
+            <StoreContext.Provider value={store}>
+            <App />
+        </StoreContext.Provider>
         </BrowserRouter>, document.getElementById('root'));
 }
 
