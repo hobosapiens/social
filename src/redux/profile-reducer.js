@@ -8,7 +8,7 @@ let initialState = {
     ],
     newPostText: 'Post text...'
 };
-
+debugger
 const profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
