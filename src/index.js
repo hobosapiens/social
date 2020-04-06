@@ -7,17 +7,9 @@ import {Provider} from "react-redux";
 import App from './App';
 import './index.css';
 
-export let renderPage = () => {
-    ReactDOM.render(
-        <BrowserRouter>
-            <Provider store={store}>
-                <App />
-            </Provider>
-        </BrowserRouter>, document.getElementById('root'));
-}
-
-renderPage();
-
-store.subscribe( () => {
-    renderPage();
-});
+ReactDOM.render(
+    <BrowserRouter>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </BrowserRouter>, document.getElementById('root'));
