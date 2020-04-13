@@ -25,12 +25,21 @@ class UsersAPICOmponent extends React.Component {
     render(){
 
         let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
-
         let pages = [];
+        let currentPage = this.props.currentPage;
 
-        for(let i=1; i <= pagesCount; i++){
+        for(let i = 0; i <= pagesCount; i++){
             pages.push(i);
         }
+
+        let firstPage = 1;
+        let lastPage = pages.length - 1;
+
+        pages = pages.filter(function(el) {
+            if(el === firstPage || el > currentPage - 5  && el < currentPage + 5 || el === lastPage) {
+                return el
+            }
+        });
 
         return <div className={s.usersContainer}>
             <div className={s.pagination}>
