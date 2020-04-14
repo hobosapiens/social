@@ -68,3 +68,11 @@
     font-weight: bold;
     cursor: default;
 }
+
+.preloaderWrapper {
+    margin: 60px;
+}
+
+.preloaderWrapper + .usersContainer {
+    display: none;
+}

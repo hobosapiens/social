@@ -3,7 +3,6 @@ import s from "./Users.module.css";
 import userDefaultMale from "../../assets/images/userDefaultMale.png";
 
 let Users = (props) => {
-
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
     let currentPage = props.currentPage;
