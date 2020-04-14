@@ -10,7 +10,7 @@ import {
 import {connect} from 'react-redux';
 import * as axios from 'axios';
 import Users from './Users';
-import Preloader from "../Common/Preloader/Preloader";
+import Preloader from '../Common/Preloader/Preloader';
 
 // Контейнерная компонента которая делает AJAX запросы
 class UsersContainer extends React.Component {

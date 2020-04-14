@@ -1,8 +1,8 @@
 import React from 'react'
-import {NavLink} from "react-router-dom";
+import {NavLink} from 'react-router-dom';
 
 import s from './Navbar.module.css';
-import NavbarFriendlist from "./NavbarFriendlist/NavbarFriendlist";
+import NavbarFriendlist from './NavbarFriendlist/NavbarFriendlist';
 
 const Navbar = (props) => {
 
@@ -11,22 +11,22 @@ const Navbar = (props) => {
         <nav className={s.nav}>
             <div className={s.menu}>
                 <div className={s.item}>
-                    <NavLink to="/profile" activeClassName={s.active}>Profile</NavLink>
+                    <NavLink to='/profile' activeClassName={s.active}>Profile</NavLink>
                 </div>
                 <div className={s.item}>
-                    <NavLink to="/dialogs" activeClassName={s.active}>Dialogs</NavLink>
+                    <NavLink to='/dialogs' activeClassName={s.active}>Dialogs</NavLink>
                 </div>
                 <div className={s.item}>
-                    <NavLink to="/users" activeClassName={s.active}>Users</NavLink>
+                    <NavLink to='/users' activeClassName={s.active}>Users</NavLink>
                 </div>
                 <div className={s.item}>
-                    <NavLink to="/news" activeClassName={s.active}>News</NavLink>
+                    <NavLink to='/news' activeClassName={s.active}>News</NavLink>
                 </div>
                 <div className={s.item}>
-                    <NavLink to="/music" activeClassName={s.active}>Music</NavLink>
+                    <NavLink to='/music' activeClassName={s.active}>Music</NavLink>
                 </div>
                 <div className={s.item}>
-                    <NavLink to="/settings" activeClassName={s.active}>Settings</NavLink>
+                    <NavLink to='/settings' activeClassName={s.active}>Settings</NavLink>
                 </div>
             </div>
             <div className={s.friends}>

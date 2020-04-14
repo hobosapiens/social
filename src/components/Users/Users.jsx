@@ -1,6 +1,6 @@
-import React from "react";
-import s from "./Users.module.css";
-import userDefaultMale from "../../assets/images/userDefaultMale.png";
+import React from 'react';
+import s from './Users.module.css';
+import userDefaultMale from '../../assets/images/userDefaultMale.png';
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);

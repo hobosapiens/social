@@ -1,5 +1,5 @@
 import React from 'react'
-import {NavLink} from "react-router-dom";
+import {NavLink} from 'react-router-dom';
 
 import s from './NavbarFriendlist.module.css';
 
@@ -9,7 +9,7 @@ const NavbarFriendlist = (props) => {
             <div className={s.avaWrap}>
                 <img src={props.avaSrc} />
             </div>
-            <NavLink to="/friends">
+            <NavLink to='/friends'>
                 {props.name}
             </NavLink>
         </div>
