@@ -4,12 +4,20 @@
     min-height: 200px;
 }
 
+.profileAvaDefault {
+    top: 0;
+    position: absolute;
+    transform: translateY(-50%);
+}
+
 .profileAva {
     border: 2px solid #fff;
     top: 0;
     position: absolute;
     transform: translateY(-50%);
 }
+
+
 .descriptionInfo {
     padding: 20px;
     margin-left: 300px;

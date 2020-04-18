@@ -7,13 +7,15 @@ const ProfileInfo = (props) => {
     if(!props.profile) {
         return <Preloader />
     }
-
     return (
         <div className={s.descriptionBlock}>
             <img src={props.profile.photos.large != null
-                    ? props.profile.photos.large
-                    : userDefaultMale
-            } className={s.profileAva} />
+                ? props.profile.photos.large
+                : userDefaultMale
+            } className={props.profile.photos.large != null
+                ? s.profileAva
+                : s.profileAvaDefault
+            }/>
             <div className={s.descriptionInfo}>
                 <div className={s.fullName}>{props.profile.fullName}</div>
                 <div className={s.about}>{props.profile.aboutMe}</div>
