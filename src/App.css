@@ -1,3 +1,7 @@
+html {
+    overflow-y: scroll;
+}
+
 .app-wrapper {
     display: grid;
     grid-template-areas: 'h h' 'n c' 'f f';

@@ -2,8 +2,20 @@
     grid-area: h;
     background-color: lightgray;
     padding: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .header img {
     max-height: 100%;
+    margin-right: auto;
+}
+
+.loginBlock {
+    margin-left: auto;
+}
+
+.login {
+    color: #000;
+    text-decoration: none;
 }

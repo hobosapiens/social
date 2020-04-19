@@ -10,7 +10,6 @@ const ProfileInfo = (props) => {
 
     // Т.к. метод map нельзя применять к объекту, я преобразовал объект в массив значений и делаю ниже map по нему.
     var userContacts = Object.values(props.profile.contacts);
-    console.log(userContacts)
 
     return (
         <div className={s.descriptionBlock}>
