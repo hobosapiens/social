@@ -23,3 +23,10 @@
     margin-left: 300px;
     box-sizing: border-box;
 }
+
+.contacts {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: lightgray;
+}

@@ -7,6 +7,11 @@ const ProfileInfo = (props) => {
     if(!props.profile) {
         return <Preloader />
     }
+
+    // Т.к. метод map нельзя применять к объекту, я преобразовал объект в массив значений и делаю ниже map по нему.
+    var userContacts = Object.values(props.profile.contacts);
+    console.log(userContacts)
+
     return (
         <div className={s.descriptionBlock}>
             <img src={props.profile.photos.large != null
@@ -23,16 +28,9 @@ const ProfileInfo = (props) => {
                     <div className={s.jobIcon}>{props.profile.fullName}</div>
                     <div className={s.jobText}>{props.profile.lookingForAJobDescription}</div>
                 </div>
-                {/*<div className={s.contacts}>*/}
-                {/*    <div className={s.website}>{props.profile.contacts.website}</div>*/}
-                {/*    <div className={s.facebook}>{props.profile.contacts.facebook}</div>*/}
-                {/*    <div className={s.vk}>{props.profile.contacts.vk}</div>*/}
-                {/*    <div className={s.twitter}>{props.profile.contacts.twitter}</div>*/}
-                {/*    <div className={s.instagram}>{props.profile.contacts.instagram}</div>*/}
-                {/*    <div className={s.youtube}>{props.profile.contacts}</div>*/}
-                {/*    <div className={s.github}>{props.profile.contacts.youtube}</div>*/}
-                {/*    <div className={s.mainLink}>{props.profile.contacts.mainLink}</div>*/}
-                {/*</div>*/}
+                <div className={s.contacts}>
+                    { userContacts.map(c => <div>{c}</div>) }
+                </div>
             </div>
         </div>
     )
