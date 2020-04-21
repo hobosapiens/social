@@ -24,7 +24,7 @@ const ProfileInfo = (props) => {
                 <div className={s.fullName}>{props.profile.fullName}</div>
                 <div className={s.about}>{props.profile.aboutMe}</div>
                 <div className={s.job}>
-                    <div className={s.jobIcon}>{props.profile.fullName}</div>
+                    <div className={s.jobIcon}></div>
                     <div className={s.jobText}>{props.profile.lookingForAJobDescription}</div>
                 </div>
                 <div className={s.contacts}>
