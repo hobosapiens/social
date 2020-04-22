@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Users.module.css';
 import userDefaultMale from '../../assets/images/userDefaultMale.png';
 import {NavLink} from 'react-router-dom';
-import * as axios from "axios";
+import {followAPI} from "../../api/api";
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -17,7 +17,7 @@ let Users = (props) => {
     let lastPage = pages.length - 1;
 
     pages = pages.filter(function(el) {
-        if(el === firstPage || el > currentPage - 5  && el < currentPage + 5 || el === lastPage) {
+        if(el === firstPage || el > currentPage - 5  && el < currentPage + 10 || el === lastPage) {
             return el
         }
     });
@@ -44,14 +44,9 @@ let Users = (props) => {
                         { u.followed
                             ? <button onClick={ () => {
 
-                                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                                    withCredentials: true,
-                                    headers: {
-                                        "API-KEY": '1170b118-702c-4511-af42-156a5dd648b2'
-                                    }
-                                })
+                                followAPI.unfollow(u.id)
                                     .then(response => {
-                                        if (response.data.resultCode == 0) {
+                                        if (response.resultCode == 0) {
                                             props.unfollow(u.id);
                                         }
                                     });
@@ -59,14 +54,9 @@ let Users = (props) => {
                             } }>Unfollow</button>
                             : <button onClick={ () => {
 
-                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                                    withCredentials: true,
-                                    headers: {
-                                        "API-KEY": '1170b118-702c-4511-af42-156a5dd648b2'
-                                    }
-                                })
+                                followAPI.follow(u.id)
                                     .then(response => {
-                                        if (response.data.resultCode == 0) {
+                                        if (response.resultCode == 0) {
                                             props.follow(u.id);
                                         }
                                     });

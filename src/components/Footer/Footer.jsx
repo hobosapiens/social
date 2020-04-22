@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './Footer.module.css';
-import * as axios from 'axios';
+import {profileAPI} from "../../api/api";
 
 const Footer = () => {
     return (
@@ -26,13 +26,8 @@ window.onload = function() {
         var formData = new FormData();
         var imagefile = document.querySelector('#photo');
         formData.append("image", imagefile.files[0]);
-        axios.post('https://social-network.samuraijs.com/api/1.0/profile/photo', formData, {
-            withCredentials: true,
-            headers: {
-                "API-KEY": '1170b118-702c-4511-af42-156a5dd648b2',
-                'Content-Type': 'multipart/form-data'
-            }
-        }).then(res => console.log(res.data));
+
+        profileAPI.uploadPhoto(formData).then(res => console.log(res));
     }
 
     var addMyStatusBtn = document.querySelector('.addMyStatusBtn');
@@ -42,15 +37,7 @@ window.onload = function() {
 
         var addMyInfoText = document.querySelector('.addMyInfoText').value;
 
-        axios.put('https://social-network.samuraijs.com/api/1.0/profile/status', {
-                "status": addMyInfoText
-            },
-            {
-                withCredentials: true,
-                headers: {
-                    "API-KEY": '1170b118-702c-4511-af42-156a5dd648b2'
-                }
-            }).then(res => console.log(res.data));
+        profileAPI.addStatus(addMyInfoText).then(res => console.log(res));
     }
 
     var addMyInfoBtn = document.querySelector('.addMyInfoBtn');
@@ -61,13 +48,7 @@ window.onload = function() {
         var addMyInfoTextUgly = document.querySelector('.addMyInfoText').value;
         var addMyInfoTextPretty = JSON.parse(addMyInfoTextUgly);
 
-        axios.put('https://social-network.samuraijs.com/api/1.0/profile/', addMyInfoTextPretty,
-            {
-                withCredentials: true,
-                headers: {
-                    "API-KEY": '1170b118-702c-4511-af42-156a5dd648b2'
-                }
-            }).then(res => console.log(res.data));
+        profileAPI.addInfo(addMyInfoTextPretty).then(res => console.log(res.data));
     }
 
 };
