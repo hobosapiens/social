@@ -28,3 +28,9 @@
     display: inline-block;
     margin-top: 10px;
 }
+
+.contacts a {
+    display: block;
+    text-decoration: none;
+    color: gray;
+}

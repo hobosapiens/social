@@ -2,6 +2,7 @@ import React from 'react';
 import s from './ProfileInfo.module.css';
 import userDefaultMale from '../../../assets/images/userDefaultMale.png'
 import Preloader from "../../Common/Preloader/Preloader";
+import { ReactComponent as JobIcon } from '../../../assets/images/jobIcon.svg';
 
 const ProfileInfo = (props) => {
     if(!props.profile) {
@@ -9,7 +10,9 @@ const ProfileInfo = (props) => {
     }
 
     // Т.к. метод map нельзя применять к объекту, я преобразовал объект в массив значений и делаю ниже map по нему.
-    var userContacts = Object.values(props.profile.contacts);
+    let userContactsFormated = Object
+        .values(props.profile.contacts)
+        .filter(word => word != null);
 
     return (
         <div className={s.descriptionBlock}>
@@ -21,14 +24,17 @@ const ProfileInfo = (props) => {
                 : s.profileAvaDefault
             }/>
             <div className={s.descriptionInfo}>
-                <div className={s.fullName}>{props.profile.fullName}</div>
+                <div className={s.fullName}><b>{props.profile.fullName}</b></div>
                 <div className={s.about}>{props.profile.aboutMe}</div>
-                <div className={s.job}>
-                    <div className={s.jobIcon}></div>
-                    <div className={s.jobText}>{props.profile.lookingForAJobDescription}</div>
-                </div>
+                { props.profile.lookingForAJob
+                    ? <div className={s.job}>
+                        <JobIcon />
+                        <span className={s.jobText} style={{'marginLeft':'10px'}}>{props.profile.lookingForAJobDescription}</span>
+                     </div>
+                    : null
+                }
                 <div className={s.contacts}>
-                    { userContacts.map(c => <div>{c}</div>) }
+                    { userContactsFormated.map(c => <a href={c} target={'_blank'}>{c}</a>) }
                 </div>
             </div>
         </div>

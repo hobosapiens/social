@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className={s.footer}>
             <div>
                 <input type="file" id="photo" style={{'marginBottom': '10px'}} /><br/>
-                <input value="Загрузить фото" className="addPhotoBtn" type="button"/>
+                <input value="Загрузить фото" className="addPhotoBtn" type="button" style={{'marginBottom': '10px'}} />
             </div>
             <div>
                 <textarea id="info" className="addMyInfoText" placeholder={`status/infa`} /><br/>
