@@ -79,7 +79,7 @@ export const getUsers = (currentPage, pageSize) => {
     return (dispatch) => {
 
         dispatch(toggleIsFetching(true));
-        usersAPI.getUsers(currentPage, currentPage)
+        usersAPI.getUsers(currentPage, pageSize)
             .then(response => {
                     dispatch(toggleIsFetching(false));
                     dispatch(setUsers(response.items));
