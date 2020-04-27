@@ -23,8 +23,8 @@ const authReducer = (state = initialState, action) => {
     }
 };
 
-export const authorization = () => {
-
+export const setAuthUserData = (userId, email, login) => ({ type: SET_USER_DATA, data: {userId, email, login} });
+export const getAuthUserData = () => {
     return (dispatch) => {
 
         authAPI.authMe()
@@ -38,7 +38,4 @@ export const authorization = () => {
 
     }
 };
-
-export const setAuthUserData = (userId, email, login) => ({ type: SET_USER_DATA, data: {userId, email, login} });
-
 export default authReducer;
