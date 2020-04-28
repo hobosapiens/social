@@ -5,6 +5,7 @@ import ProfileImg from './ProfileImg/ProfileImg';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
 
 const Profile = (props) => {
+
     return (
         <div className={s.profile}>
             <ProfileImg />
