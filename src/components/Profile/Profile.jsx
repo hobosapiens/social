@@ -1,15 +1,15 @@
 import React from 'react';
 import s from './Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
-import ProfileImg from './ProfileImg/ProfileImg';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
+import ProfileStatus from './ProfileStatus';
 
 const Profile = (props) => {
 
     return (
         <div className={s.profile}>
-            <ProfileImg />
             <ProfileInfo profile={props.profile} />
+            <ProfileStatus status={'Testovii status'} />
             <MyPostsContainer />
         </div>
     )

@@ -1,26 +1,18 @@
 .descriptionBlock {
-    padding: 0 20px 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
     position: relative;
-    min-height: 200px;
 }
 
 .profileAvaDefault {
-    top: 0;
-    position: absolute;
-    transform: translateY(-50%);
 }
 
 .profileAva {
-    border: 2px solid #fff;
-    top: 0;
-    position: absolute;
-    transform: translateY(-50%);
 }
-
 
 .descriptionInfo {
     padding: 20px;
-    margin-left: 300px;
     box-sizing: border-box;
 }
 

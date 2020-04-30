@@ -28,5 +28,5 @@ let mapStateToProps = (state) => ({
 export default compose(
     connect(mapStateToProps, {geUsertProfile}),
     withRouter,
-    withAuthRedirect
+    // withAuthRedirect
 )(ProfileContainer);
