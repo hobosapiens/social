@@ -2,7 +2,6 @@ import React from 'react';
 import {Route} from 'react-router-dom';
 
 import './App.css';
-import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import News from './components/News/News';
 import Music from './components/Music/Music';
