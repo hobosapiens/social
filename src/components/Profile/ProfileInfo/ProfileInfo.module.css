@@ -6,14 +6,17 @@
 }
 
 .profileAvaDefault {
+    max-width: 200px;
 }
 
 .profileAva {
+    max-width: 200px;
 }
 
 .descriptionInfo {
-    padding: 20px;
+    padding: 20px 40px;
     box-sizing: border-box;
+    max-width: calc(100% - 200px);
 }
 
 .contacts {

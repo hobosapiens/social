@@ -37,7 +37,7 @@ window.onload = function() {
 
         var addMyInfoText = document.querySelector('.addMyInfoText').value;
 
-        profileAPI.addStatus(addMyInfoText).then(res => console.log(res));
+        profileAPI.updateStatus(addMyInfoText).then(res => console.log(res));
     }
 
     var addMyInfoBtn = document.querySelector('.addMyInfoBtn');
