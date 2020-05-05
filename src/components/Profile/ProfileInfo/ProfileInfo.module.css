@@ -1,16 +1,16 @@
 .descriptionBlock {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 20px;
     position: relative;
 }
 
 .profileAvaDefault {
-    max-width: 200px;
+
 }
 
 .profileAva {
-    max-width: 200px;
+
 }
 
 .descriptionInfo {

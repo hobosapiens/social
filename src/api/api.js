@@ -35,15 +35,11 @@ export const profileAPI = {
             })
     },
     getStatus(userId = 7298) {
-        return instance.get('profile/status/' + userId).then(response => {
-            return response.data;
-        })
+        return instance.get('profile/status/' + userId)
     },
     updateStatus(statusText) {
         return instance.put('profile/status/', {
             "status": statusText
-        }).then(response => {
-            return response.data;
         })
     },
     addInfo(infoText) {
@@ -57,13 +53,13 @@ export const followAPI = {
     follow(userId) {
         return instance.post('follow/' + userId)
             .then(response => {
-                return response.data;
+                return response;
             })
     },
     unfollow(userId) {
         return instance.delete('follow/' + userId)
             .then(response => {
-                return response.data;
+                return response;
             })
     }
 };

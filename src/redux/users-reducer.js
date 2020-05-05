@@ -98,7 +98,7 @@ export const follow = (userId) => {
         dispatch(toggleFollowingProgress(true, userId));
         followAPI.follow(userId)
             .then(response => {
-                if (response.resultCode == 0) {
+                if (response.data.resultCode == 0) {
                     dispatch(followSuccess(userId));
                 }
                 dispatch(toggleFollowingProgress(false, userId));
@@ -114,7 +114,7 @@ export const unfollow = (userId) => {
         dispatch(toggleFollowingProgress(true, userId));
         followAPI.unfollow(userId)
             .then(response => {
-                if (response.resultCode == 0) {
+                if (response.data.resultCode == 0) {
                     dispatch(unfollowSuccess(userId));
                 }
                 dispatch(toggleFollowingProgress(false, userId));
