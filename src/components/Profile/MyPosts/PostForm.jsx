@@ -24,11 +24,11 @@ const PostReduxForm = reduxForm({
 })(PostForm);
 
 const AddPostForm = (props) => {
-    const onSubmit = (values) => {
+    const addPost = (values) => {
         props.addPost(values.postText);
     };
     return <div className={s.login}>
-        <PostReduxForm onSubmit={onSubmit}/>
+        <PostReduxForm onSubmit={addPost}/>
     </div>
 };
 

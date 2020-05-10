@@ -5,7 +5,7 @@ import * as s from './Login.module.css'
 
 const LoginForm = (props) => {
 
-    let Logout = () => {
+    let logout = () => {
         props.logOutUser();
     };
 
@@ -24,7 +24,7 @@ const LoginForm = (props) => {
             </div>
             <div>
                 <button type="submit">Login</button>
-                <button type="button" onClick={Logout}>Logout</button>
+                <button type="button" onClick={logout}>Logout</button>
             </div>
         </form>
     )
@@ -35,13 +35,12 @@ const LoginReduxForm = reduxForm({
 })(LoginForm);
 
 const Login = (props) => {
-    const onSubmit = (formData) => {
+    const logIn = (formData) => {
         props.logInUser(formData.email, formData.password, formData.rememberMe);
     };
-
      return <div className={s.login}>
         <h1>Login</h1>
-        <LoginReduxForm onSubmit={onSubmit} logOutUser={props.logOutUser} />
+        <LoginReduxForm onSubmit={logIn} logOutUser={props.logOutUser} />
     </div>
 };
 

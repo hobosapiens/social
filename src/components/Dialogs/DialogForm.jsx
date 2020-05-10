@@ -24,11 +24,11 @@ const DialogReduxForm = reduxForm({
 })(DialogForm);
 
 const AddDialogMessageForm = (props) => {
-    const onSubmit = (values) => {
+    const addMessage = (values) => {
         props.addMessage(values.messageText);
     };
     return <div className={s.login}>
-        <DialogReduxForm onSubmit={onSubmit} />
+        <DialogReduxForm onSubmit={addMessage} />
     </div>
 };
 
