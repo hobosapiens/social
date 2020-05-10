@@ -78,13 +78,13 @@ export const authAPI = {
         "rememberMe": rememberMe
     })
             .then(response => {
-                return response.data;
+                return alert('Login');
             })
     },
     logOut() {
         return instance.post('auth/logout')
             .then(response => {
-                return response.data;
+                return alert('Logout');
             })
     }
 };

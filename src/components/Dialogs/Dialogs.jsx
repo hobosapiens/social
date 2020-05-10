@@ -3,7 +3,7 @@ import s from './Dialogs.module.css';
 
 import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message'
-import DialogMessageForm from "./DialogForm";
+import AddDialogMessageForm from "./DialogForm";
 
 const Dialogs = (props) => {
 
@@ -18,7 +18,7 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 {messagesElements}
-                <DialogMessageForm {...props} />
+                <AddDialogMessageForm {...props} />
             </div>
         </div>
     )

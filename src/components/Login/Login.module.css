@@ -9,3 +9,36 @@
 .login form > div {
     margin-bottom: 10px;
 }
+
+.login label {
+    display: inline-flex;
+    align-items: flex-start;
+    line-height: 11px;
+    color: gray;
+    font-size: 15px;
+}
+
+.login label input {
+    margin: 0 5px 0 0;
+}
+
+.login button {
+    cursor: pointer;
+    border: none;
+    padding: 5px 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.login button:hover {
+    filter: brightness(110%);
+}
+
+.login button[type='submit'] {
+    background: green;
+    margin-right: 10px;
+}
+
+.login button[type='button'] {
+    background: #d13f45;
+}
