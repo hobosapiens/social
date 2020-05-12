@@ -2,6 +2,10 @@ import React from "react";
 import {Field, reduxForm} from "redux-form";
 
 import * as s from './Login.module.css'
+import {Input} from "../Common/FormsControls/FormsControls";
+import {maxLengthCreator, required} from "../../utils/validators/validators";
+
+const maxLength30 = maxLengthCreator(30);
 
 const LoginForm = (props) => {
 
@@ -12,14 +16,14 @@ const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field placeholder={'@email'} name={'email'} component={'input'} type={'text'} />
+                <Field placeholder={'@email'} name={'email'} component={Input} type={'text'} validate={[required, maxLength30]} />
             </div>
             <div>
-                <Field placeholder={'Password'} name={'password'} component={'input'} type={'password'} />
+                <Field placeholder={'Password'} name={'password'} component={Input} validate={[required, maxLength30]} type={'password'} />
             </div>
             <div>
                 <label>
-                    <Field type={'checkbox'} name={'rememberMe'} component={'input'} /> remember me
+                    <Field type={'checkbox'} name={'rememberMe'} component={Input} /> remember me
                 </label>
             </div>
             <div>
