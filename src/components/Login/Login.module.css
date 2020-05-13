@@ -38,3 +38,7 @@
     background: green;
     margin-right: 10px;
 }
+
+.login input {
+    padding: 5px;
+}

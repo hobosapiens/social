@@ -10,10 +10,6 @@ const maxLength30 = maxLengthCreator(30);
 
 const LoginForm = (props) => {
 
-    let logout = () => {
-        props.logOutUser();
-    };
-
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
