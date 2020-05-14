@@ -8,13 +8,18 @@ class LoginContainer extends React.Component {
     }
     render() {
         return (
-            <Login {...this.props} logInUser={this.props.logInUser} logOutUser={this.props.logOutUser} />
+            <Login {...this.props}
+                   logInUser={this.props.logInUser}
+                   logOutUser={this.props.logOutUser}
+                   captchaURL={this.props.captchaURL}
+            />
         )
     }
 }
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    captchaURL: state.auth.captchaURL
 });
 
 export default connect(mapStateToProps, {logInUser, logOutUser})(LoginContainer);

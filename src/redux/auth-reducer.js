@@ -1,12 +1,14 @@
 import {authAPI} from "../api/api";
 
 const SET_USER_DATA = 'SET_USER_DATA';
+const SET_CAPTCHA_URL = 'SET_CAPTCHA_URL';
 
 let initialState = {
     id: null,
     email: null,
     login: null,
-    isAuth: false
+    isAuth: false,
+    captchaURL: null
 };
 
 const authReducer = (state = initialState, action) => {
@@ -17,10 +19,17 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 ...action.payload
             };
+        case SET_CAPTCHA_URL:
+            return {
+                ...state,
+                captchaURL: action.captchaURL
+            };
         default:
             return state;
     }
 };
+
+export const setCaptchaURL = (captchaURL) => ({ type: SET_CAPTCHA_URL, captchaURL });
 
 export const setAuthUserData = (userId, email, login, isAuth) => ({
     type: SET_USER_DATA,
@@ -39,11 +48,19 @@ export const getAuthUserData = () => {
 
     }
 };
-export const logInUser = (email, password, rememberMe) => (dispatch) => {
-    authAPI.logIn(email, password, rememberMe)
+export const logInUser = (email, password, rememberMe, captcha) => (dispatch) => {
+    authAPI.logIn(email, password, rememberMe, captcha)
         .then(response => {
                 if (response.data.resultCode === 0) {
                     dispatch(getAuthUserData());
+                    dispatch(setCaptchaURL(null));
+                }
+                if (response.data.resultCode === 10) {
+                    authAPI.getCaptchaUrl()
+                        .then(response => {
+                            console.log(response.data.url);
+                            dispatch(setCaptchaURL(response.data.url));
+                        });
                 }
             }
         );

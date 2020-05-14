@@ -42,3 +42,8 @@
 .login input {
     padding: 5px;
 }
+
+.captchImg {
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+}
