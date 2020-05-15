@@ -39,8 +39,10 @@
     margin-right: 10px;
 }
 
-.login input {
+.login input:not([type="checkbox"]) {
     padding: 5px;
+    width: 202px;
+    box-sizing: border-box;
 }
 
 .captchImg {

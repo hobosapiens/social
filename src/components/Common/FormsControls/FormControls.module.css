@@ -10,3 +10,10 @@
     color: red;
     margin-bottom: 10px;
 }
+
+.summaryError {
+    border: 1px solid red;
+    padding: 5px;
+    color: red;
+    display: inline-block;
+}
