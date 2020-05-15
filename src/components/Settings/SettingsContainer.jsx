@@ -42,11 +42,13 @@ class SettingsContainer extends React.Component {
 
     render() {
         return (
-            <Settings {...this.props} />
+            <Settings />
         )
     }
 }
 
-let mapStateToProps = (state) => ({});
+let mapStateToProps = (state) => ({
+
+});
 
 export default connect(mapStateToProps, {})(SettingsContainer);
