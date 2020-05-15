@@ -5,7 +5,6 @@ import './App.css';
 import Footer from './components/Footer/Footer'
 import News from './components/News/News';
 import Music from './components/Music/Music';
-import Settings from './components/Settings/Settings';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import NavbarContainer from './components/Navbar/NavbarContainer';
 import UsersContainer from './components/Users/UsersContainer';
@@ -16,6 +15,7 @@ import {connect} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/Common/Preloader/Preloader";
+import SettingsContainer from "./components/Settings/SettingsContainer";
 
 class App extends Component {
     componentDidMount() {
@@ -43,8 +43,8 @@ class App extends Component {
                     <Route path='/users' render={() => <UsersContainer/>}/>
                     <Route path='/news' render={News}/>
                     <Route path='/music' render={Music}/>
-                    <Route path='/settings' render={Settings}/>
-                    <Route path='/login' render={Settings} render={() => <LoginPage/>}/>
+                    <Route path='/settings' render={() => <SettingsContainer />}/>
+                    <Route path='/login' render={() => <LoginPage/>}/>
                 </div>
                 <Footer/>
             </div>
