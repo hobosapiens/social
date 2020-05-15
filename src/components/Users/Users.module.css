@@ -26,6 +26,12 @@
     width: 150px;
 }
 
+.userInfo span {
+    max-width: 90%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 .userInfo button {
     border: 1px dashed lightgray;
     background-color: transparent;
