@@ -4,6 +4,7 @@ import userDefaultMale from '../../../assets/images/userDefaultMale.png'
 import Preloader from "../../Common/Preloader/Preloader";
 import { ReactComponent as JobIcon } from '../../../assets/images/jobIcon.svg';
 import ProfileStatus from "../ProfileStatus";
+import ProfileStatusWithHooks from "../ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
     if(!props.profile) {
@@ -27,7 +28,7 @@ const ProfileInfo = (props) => {
             <div className={s.descriptionInfo}>
                 <div className={s.fullName}><b>{props.profile.fullName}</b></div>
                 <div className={s.about}>{props.profile.aboutMe}</div>
-                <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
                 { props.profile.lookingForAJob
                     ? <div className={s.job}>
                         <JobIcon />
