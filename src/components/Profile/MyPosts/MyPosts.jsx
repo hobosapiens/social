@@ -3,10 +3,9 @@ import s from './MyPosts.module.css';
 import Post from './Post/Post';
 import AddPostForm from "./PostForm";
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
     // Проходимся .map по массиву данных и создаем массив jsx элементов. Далее передаем их через пропсы в нужные компоненты.
     let postsElements = props.posts.map(p => <Post message={p.post} likeCount={p.likeCount} key={p.id}/>);
-
     return (
         <div className={s.posts}>
             <div className={s.postsTitle}>
@@ -16,6 +15,6 @@ const MyPosts = (props) => {
             {postsElements}
         </div>
     )
-};
+});
 
 export default MyPosts
