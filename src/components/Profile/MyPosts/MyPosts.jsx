@@ -5,7 +5,10 @@ import AddPostForm from "./PostForm";
 
 const MyPosts = React.memo((props) => {
     // Проходимся .map по массиву данных и создаем массив jsx элементов. Далее передаем их через пропсы в нужные компоненты.
-    let postsElements = props.posts.map(p => <Post message={p.post} likeCount={p.likeCount} key={p.id}/>);
+    let postsElements =
+        [...props.posts]
+            .map(p => <Post message={p.post} likeCount={p.likeCount} key={p.id}/>)
+            .reverse();
     return (
         <div className={s.posts}>
             <div className={s.postsTitle}>
