@@ -36,44 +36,38 @@ export const setAuthUserData = (userId, email, login, isAuth) => ({
     type: SET_USER_DATA,
     payload: {userId, email, login, isAuth}
 });
-export const getAuthUserData = () => {
-    return (dispatch) => {
-        return authAPI.authMe()
-            .then(response => {
-                    if (response.resultCode === 0) {
-                        let {id, email, login} = response.data;
-                        dispatch(setAuthUserData(id, email, login, true));
-                    }
-                }
-            );
+export const getAuthUserData = () => async (dispatch) => {
+    let response = await authAPI.authMe();
+
+    if (response.resultCode === 0) {
+        let {id, email, login} = response.data;
+        dispatch(setAuthUserData(id, email, login, true));
     }
 };
-export const logInUser = (email, password, rememberMe, captcha) => (dispatch) => {
-    authAPI.logIn(email, password, rememberMe, captcha)
-        .then(response => {
-                let errorMessage = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
-                if (response.data.resultCode === 0) {
-                    dispatch(getAuthUserData());
-                    dispatch(setCaptchaURL(null));
-                } else if (response.data.resultCode === 10) {
-                    dispatch(stopSubmit("login", {_error: errorMessage}));
-                    authAPI.getCaptchaUrl()
-                        .then(response => {
-                            dispatch(setCaptchaURL(response.data.url));
-                        });
-                } else {
-                    dispatch(stopSubmit("login", {_error: errorMessage}));
-                }
-            }
-        );
+export const logInUser = (email, password, rememberMe, captcha) => async (dispatch) => {
+    let response = await authAPI.logIn(email, password, rememberMe, captcha);
+
+    let errorMessage = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
+    if (response.data.resultCode === 0) {
+        dispatch(getAuthUserData());
+        dispatch(setCaptchaURL(null));
+    } else if (response.data.resultCode === 10) {
+        dispatch(stopSubmit("login", {_error: errorMessage}));
+        dispatch(getCaptchaUrl());
+    } else {
+        dispatch(stopSubmit("login", {_error: errorMessage}));
+    }
+
 };
-export const logOutUser = () => (dispatch) => {
-    authAPI.logOut()
-        .then(response => {
-                if (response.data.resultCode === 0) {
-                    dispatch(setAuthUserData(null, null, null, false));
-                }
-            }
-        );
+export const logOutUser = () => async (dispatch) => {
+    let response = await authAPI.logOut();
+
+    if (response.data.resultCode === 0) {
+        dispatch(setAuthUserData(null, null, null, false));
+    }
+};
+export const getCaptchaUrl = () => async (dispatch) => {
+    let response = await authAPI.captchaUrl();
+    dispatch(setCaptchaURL(response.data.url));
 };
 export default authReducer;
