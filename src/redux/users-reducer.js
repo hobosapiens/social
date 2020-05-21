@@ -1,4 +1,5 @@
 import {followAPI, usersAPI} from "../api/api";
+import {updateObjectInArray} from "../utils/object-helpers";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -24,24 +25,12 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 // users: [...state.users] идентично users: state.users.map( u => u )
-                users: state.users.map( u => {
-                        if (u.id === action.userId) {
-                            return {...u, followed: true}
-                        }
-                        return u;
-                    }
-                )
+                users: updateObjectInArray(state.users, action.userId, 'id', {followed: true})
             };
         case UNFOLLOW:
             return {
                 ...state,
-                users: state.users.map( u => {
-                        if (u.id === action.userId) {
-                            return {...u, followed: false}
-                        }
-                        return u;
-                    }
-                )
+                users: updateObjectInArray(state.users, action.userId, 'id', {followed: false})
             };
         case SET_USERS:
             // копируем старый стейт и склеиваем копию старых users с теми, которые пришли в action.users
@@ -97,8 +86,7 @@ const followUnfollowFlow = async (dispatch, userId, apiMethod, actionCreator) =>
 };
 
 export const follow = (userId) => async (dispatch) => {
-    followUnfollowFlow(
-        dispatch, userId, followAPI.follow.bind(followAPI), followSuccess);
+    followUnfollowFlow(dispatch, userId, followAPI.follow.bind(followAPI), followSuccess);
 };
 
 export const unfollow = (userId) => async (dispatch) => {
