@@ -21,14 +21,16 @@ import {
 class UsersContainer extends React.Component {
 
     componentDidMount() {
+        const {currentPage, pageSize} = this.props;
         // thunk
-        this.props.requestUsers(this.props.currentPage, this.props.pageSize)
+        this.props.requestUsers(currentPage, pageSize)
 
     }
 
     onPageChanged = (pageNumber) => {
+        const {pageSize} = this.props;
         // thunk
-        this.props.requestUsers(pageNumber, this.props.pageSize)
+        this.props.requestUsers(pageNumber, pageSize)
 
     };
 
@@ -59,29 +61,6 @@ let mapStateToProps = (state) => {
         followingInProgress: getFollowingInProgress(state)
     }
 };
-
-// let mapDispatchToProps = (dispatch) => {
-//     return {
-//         follow: (userId) => {
-//             dispatch(followAC(userId));
-//         },
-//         unfollow: (userId) => {
-//             dispatch(unfollowAC(userId));
-//         },
-//         setUsers: (users) => {
-//             dispatch(setUsersAC(users));
-//         },
-//         setCurrentPage: (CurrentPage) => {
-//             dispatch(setCurrentPageAC(CurrentPage))
-//         },
-//         setTotalUsersCount: (totalCount) => {
-//             dispatch(setUsersotalCountAC(totalCount))
-//         },
-//         toggleIsFetching: (isFetching) => {
-//             dispatch(toggleIsFetchingAC(isFetching))
-//         }
-//     }
-// };
 
 export default connect(mapStateToProps, {
         follow,

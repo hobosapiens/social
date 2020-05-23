@@ -3,36 +3,29 @@ import {Field, reduxForm} from "redux-form";
 
 import * as s from './Login.module.css';
 import * as s2 from '../Common/FormsControls/FormControls.module.css';
-import {Input} from "../Common/FormsControls/FormsControls";
+import {createField, Input} from "../Common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../utils/validators/validators";
 import {Redirect} from "react-router-dom";
 
 const maxLength30 = maxLengthCreator(30);
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error, captchaURL}) => {
 
     return (
-        <form onSubmit={props.handleSubmit}>
-            <div>
-                <Field placeholder={'@email'} name={'email'} component={Input} type={'text'} validate={[required, maxLength30]} />
-            </div>
-            <div>
-                <Field placeholder={'Password'} name={'password'} component={Input} validate={[required, maxLength30]} type={'password'} />
-            </div>
-            <div>
-                <label>
-                    <Field type={'checkbox'} name={'rememberMe'} component={Input} /> remember me
-                </label>
-            </div>
-            { props.captchaURL &&
+        <form onSubmit={handleSubmit}>
+                {createField('@email','email', Input, 'text', [required, maxLength30])}
+                {createField('Password','password', Input, 'password', [required, maxLength30])}
+                {createField(null,'rememberMe', Input, 'checkbox', null, 'remember me')}
+
+            { captchaURL &&
                 <div>
-                    <img src={props.captchaURL} alt="" className={s.captchImg}/>
+                    <img src={captchaURL} alt="" className={s.captchImg}/>
                     <Field type={'text'} name={'captcha'} component={Input} validate={[required]}/>
                 </div>
             }
-            { props.error &&
+            { error &&
                 <div className={s2.summaryError}>
-                    {props.error}
+                    {error}
                 </div>
             }
             <div>

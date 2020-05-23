@@ -64,20 +64,6 @@
     border-left: 1px dotted lightgray;
 }
 
-.pagination {
-    margin-bottom: 20px;
-}
-
-.pagination span {
-    margin-right: 7px;
-    cursor: pointer;
-}
-
-.pagination .activePage {
-    font-weight: bold;
-    cursor: default;
-}
-
 .preloaderWrapper {
     margin: 60px;
 }

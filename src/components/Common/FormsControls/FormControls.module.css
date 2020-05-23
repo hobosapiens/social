@@ -17,3 +17,7 @@
     color: red;
     display: inline-block;
 }
+
+.formControl {
+    display: inline-block;
+}
