@@ -1,35 +1,47 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './Pagination.module.css'
+import cn from 'classnames';
 
-let Pagination = (props) => {
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
+let Pagination = ({currentPage, totalItemsCount, pageSize, onPageChanged, portionSize = 10}) => {
+
+    let pagesCount = Math.ceil(totalItemsCount / pageSize);
     let pages = [];
-    let currentPage = props.currentPage;
 
-    for(let i = 0; i <= pagesCount; i++){
+    for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
 
-    let firstPage = 1;
-    let lastPage = pages.length - 1;
-
-    pages = pages.filter((el) => {
-        if(el === firstPage || el > currentPage - 5  && el < currentPage + 10 || el === lastPage) {
-            return el
-        }
-        return null
-    });
+    let portionCount = Math.ceil(pagesCount / portionSize);
+    let [portionNumber, setPortionNumber] = useState(1);
+    let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
+    let rightPortionPageNumber = portionNumber * portionSize;
 
     return (
         <div className={s.pagination}>
-            {pages.map(p => {
-                return <span
-                    className={props.currentPage === p && s.activePage}
-                    onClick={(e) => {
-                        props.onPageChanged(p)
-                    }}
-                >{p}</span>
-            })}
+            {portionNumber > 1 &&
+            <div className={s.paginationPrev}>
+                <button onClick={() => { setPortionNumber(portionNumber - 1) }}>{'<<'}</button>
+                <button onClick={() => { setPortionNumber(1) }}>1...</button>
+            </div>}
+            {pages
+                .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
+                .map((p) => {
+                    return <span
+                        className={cn({[s.activePage]: currentPage === p}, s.pageNumber)}
+                        key={p}
+                        onClick={(e) => {
+                            onPageChanged(p)
+                        }}>
+                            {p}
+                        </span>
+                })}
+            {portionCount > portionNumber &&
+                <div className={s.paginationNext}>
+                    <button onClick={() => { setPortionNumber(portionCount) }}>...{pages.length}</button>
+                    <button onClick={() => { setPortionNumber(portionNumber + 1) }}>{'>>'}</button>
+                </div>
+
+            }
         </div>
     )
 };
