@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/social/static/css/main.10de0165.chunk.css",
+    "main.js": "/social/static/js/main.cc5e8db6.chunk.js",
+    "main.js.map": "/social/static/js/main.cc5e8db6.chunk.js.map",
+    "runtime-main.js": "/social/static/js/runtime-main.08b3aabb.js",
+    "runtime-main.js.map": "/social/static/js/runtime-main.08b3aabb.js.map",
+    "static/js/2.f4289623.chunk.js": "/social/static/js/2.f4289623.chunk.js",
+    "static/js/2.f4289623.chunk.js.map": "/social/static/js/2.f4289623.chunk.js.map",
+    "static/css/3.c89d5f15.chunk.css": "/social/static/css/3.c89d5f15.chunk.css",
+    "static/js/3.273090d3.chunk.js": "/social/static/js/3.273090d3.chunk.js",
+    "static/js/3.273090d3.chunk.js.map": "/social/static/js/3.273090d3.chunk.js.map",
+    "static/css/4.a91e9b34.chunk.css": "/social/static/css/4.a91e9b34.chunk.css",
+    "static/js/4.00bf3bf8.chunk.js": "/social/static/js/4.00bf3bf8.chunk.js",
+    "static/js/4.00bf3bf8.chunk.js.map": "/social/static/js/4.00bf3bf8.chunk.js.map",
+    "index.html": "/social/index.html",
+    "precache-manifest.d19ec807d335b89f5301db713bf1e2bc.js": "/social/precache-manifest.d19ec807d335b89f5301db713bf1e2bc.js",
+    "service-worker.js": "/social/service-worker.js",
+    "static/css/3.c89d5f15.chunk.css.map": "/social/static/css/3.c89d5f15.chunk.css.map",
+    "static/css/4.a91e9b34.chunk.css.map": "/social/static/css/4.a91e9b34.chunk.css.map",
+    "static/css/main.10de0165.chunk.css.map": "/social/static/css/main.10de0165.chunk.css.map",
+    "static/js/2.f4289623.chunk.js.LICENSE.txt": "/social/static/js/2.f4289623.chunk.js.LICENSE.txt",
+    "static/media/jobIcon.518090cc.svg": "/social/static/media/jobIcon.518090cc.svg",
+    "static/media/logout.b0dbb959.svg": "/social/static/media/logout.b0dbb959.svg",
+    "static/media/preloader.svg": "/social/static/media/preloader.949d9d44.svg",
+    "static/media/userDefaultMale.png": "/social/static/media/userDefaultMale.07f6f575.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.08b3aabb.js",
+    "static/js/2.f4289623.chunk.js",
+    "static/css/main.10de0165.chunk.css",
+    "static/js/main.cc5e8db6.chunk.js"
+  ]
+}
