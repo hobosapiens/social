@@ -9,6 +9,8 @@ class Profile extends PureComponent {
         return (
             <div className={s.profile}>
                 <ProfileInfo
+                    isOwner={this.props.isOwner}
+                    savePhoto={this.props.savePhoto}
                     profile={this.props.profile}
                     status={this.props.status}
                     updateStatus={this.props.updateStatus}

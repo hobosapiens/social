@@ -5,6 +5,10 @@
     position: relative;
 }
 
+.profileAva {
+    position: relative;
+}
+
 .descriptionInfo {
     padding: 20px 40px;
     box-sizing: border-box;
@@ -20,4 +24,10 @@
     display: block;
     text-decoration: none;
     color: gray;
+}
+
+.changeAvaBtn {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
 }
