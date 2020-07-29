@@ -13,6 +13,7 @@ class Profile extends PureComponent {
                     savePhoto={this.props.savePhoto}
                     profile={this.props.profile}
                     status={this.props.status}
+                    saveProfile={this.props.saveProfile}
                     updateStatus={this.props.updateStatus}
                 />
                 <MyPostsContainer/>
