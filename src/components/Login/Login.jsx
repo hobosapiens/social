@@ -18,8 +18,8 @@ const LoginForm = ({handleSubmit, error, captchaURL}) => {
                 {createField(null,'rememberMe', Input, 'checkbox', null, 'remember me')}
 
             { captchaURL &&
-                <div>
-                    <img src={captchaURL} alt="" className={s.captchImg}/>
+                <div className={s.captcha}>
+                    <img src={captchaURL} alt="" className={s.captchaImg}/>
                     <Field type={'text'} name={'captcha'} component={Input} validate={[required]}/>
                 </div>
             }
@@ -40,7 +40,7 @@ const LoginReduxForm = reduxForm({
 })(LoginForm);
 
 const Login = (props) => {
-    const logIn = (formData) => {
+    const onSubmit = (formData) => {
         props.logInUser(formData.email, formData.password, formData.rememberMe, formData.captcha);
     };
 
@@ -50,7 +50,7 @@ const Login = (props) => {
 
     return <div className={s.login}>
         <h1>Login</h1>
-        <LoginReduxForm onSubmit={logIn} logOutUser={props.logOutUser} captchaURL={props.captchaURL} />
+        <LoginReduxForm onSubmit={onSubmit} logOutUser={props.logOutUser} captchaURL={props.captchaURL} />
     </div>
 };
 

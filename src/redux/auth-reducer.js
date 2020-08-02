@@ -16,21 +16,17 @@ const authReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SET_USER_DATA:
-            return {
-                ...state,
-                ...action.payload
-            };
         case SET_CAPTCHA_URL:
             return {
                 ...state,
-                captchaURL: action.captchaURL
+                ...action.payload
             };
         default:
             return state;
     }
 };
 
-export const setCaptchaURL = (captchaURL) => ({ type: SET_CAPTCHA_URL, captchaURL });
+export const setCaptchaURL = (captchaURL) => ({ type: SET_CAPTCHA_URL, payload: {captchaURL} });
 
 export const setAuthUserData = (userId, email, login, isAuth) => ({
     type: SET_USER_DATA,
@@ -51,11 +47,11 @@ export const logInUser = (email, password, rememberMe, captcha) => async (dispat
     if (response.data.resultCode === 0) {
         dispatch(getAuthUserData());
         dispatch(setCaptchaURL(null));
-    } else if (response.data.resultCode === 10) {
-        dispatch(stopSubmit("login", {_error: errorMessage}));
-        dispatch(getCaptchaUrl());
     } else {
         dispatch(stopSubmit("login", {_error: errorMessage}));
+        if (response.data.resultCode === 10) {
+            dispatch(getCaptchaUrl());
+        }
     }
 
 };

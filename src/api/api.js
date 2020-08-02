@@ -87,7 +87,7 @@ export const authAPI = {
                 return response.data;
             })
     },
-    logIn(email, password, rememberMe, captcha) {
+    logIn(email, password, rememberMe = false, captcha = null) {
         return instance.post('auth/login', { email, password, rememberMe, captcha })
     },
     logOut() {
