@@ -1,6 +1,7 @@
 .descriptionBlock {
     display: flex;
     flex-wrap: nowrap;
+    align-items: flex-start;
     padding: 20px;
     position: relative;
 }
@@ -10,7 +11,7 @@
 }
 
 .descriptionInfo {
-    padding: 20px 40px;
+    padding: 0  0 0 40px;
     box-sizing: border-box;
     max-width: calc(100% - 200px);
 }
@@ -29,5 +30,6 @@
 .changeAvaBtn {
     position: absolute;
     left: 30px;
-    bottom: 30px;
+    top: 30px;
+    background: rgba(255,255,255,.8);
 }

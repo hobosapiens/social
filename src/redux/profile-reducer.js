@@ -99,7 +99,10 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
     if (response.resultCode === 0) {
         dispatch(getUsertProfile(userId));
     } else {
-        dispatch(stopSubmit("edit-profile", {_error: response.messages[0]}));
+        let key = response.messages[0].match(/Contacts->(\w+)/)[1].toLowerCase();
+        dispatch(stopSubmit('edit-profile', {
+            contacts: {[key]: response.messages[0]},
+        }));
         return Promise.reject(response.messages[0]);
     }
 };
