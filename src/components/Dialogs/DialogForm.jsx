@@ -1,5 +1,5 @@
 import React from "react";
-import {Field, reduxForm} from "redux-form";
+import {Field, reduxForm, reset} from "redux-form";
 
 import * as s from './Dialogs.module.css'
 import {Textarea} from "../Common/FormsControls/FormsControls";
@@ -23,8 +23,13 @@ const DialogForm = (props) => {
     )
 };
 
+const afterSubmit = (result, dispatch) => {
+    dispatch(reset('dialog'));
+};
+
 const DialogReduxForm = reduxForm({
-    form: 'dialog'
+    form: 'dialog',
+    onSubmitSuccess: afterSubmit
 })(DialogForm);
 
 const AddDialogMessageForm = (props) => {
