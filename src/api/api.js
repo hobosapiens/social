@@ -24,16 +24,6 @@ export const profileAPI = {
                 return response.data;
             })
     },
-    uploadPhoto(formData) {
-        return instance.post('profile/photo', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        })
-            .then(response => {
-                return response.data;
-            })
-    },
     savePhoto(photoFile) {
         let formData = new FormData();
         formData.append("image", photoFile);
@@ -47,16 +37,6 @@ export const profileAPI = {
     },
     getStatus(userId) {
         return instance.get('profile/status/' + userId)
-    },
-    updateStatus(statusText) {
-        return instance.put('profile/status/', {
-            "status": statusText
-        })
-    },
-    addInfo(infoText) {
-        return instance.put('profile/', infoText).then(response => {
-            return response.data;
-        })
     },
     saveProfile(profile){
         return instance.put('profile/', profile).then(response => {
