@@ -1,5 +1,5 @@
 import React from "react";
-import {Field, reduxForm} from "redux-form";
+import {Field, reduxForm, reset} from "redux-form";
 
 import * as s from './MyPosts.module.css'
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
@@ -23,8 +23,13 @@ const PostForm = (props) => {
     )
 };
 
+const afterSubmit = (result, dispatch) => {
+    dispatch(reset('dialog'));
+};
+
 const PostReduxForm = reduxForm({
-    form: 'dialog'
+    form: 'dialog',
+    onSubmitSuccess: afterSubmit
 })(PostForm);
 
 const AddPostForm = (props) => {
