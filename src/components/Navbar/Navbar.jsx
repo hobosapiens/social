@@ -6,7 +6,10 @@ import NavbarFriendlist from './NavbarFriendlist/NavbarFriendlist';
 
 const Navbar = (props) => {
 
-    let friendsItems = props.navbar.friendList.map(f => <NavbarFriendlist name={f.name} id={f.id} key={f.id} avaSrc={f.avaSrc} />);
+    let friendsItems = props.navbar.friendList.map(f => <NavbarFriendlist
+        name={f.name} id={f.id} key={f.id} photo={f.photos.small} status={f.status}
+    />);
+
     return (
         <nav className={s.nav}>
             <div className={s.menu}>

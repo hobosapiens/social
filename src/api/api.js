@@ -14,6 +14,12 @@ export const usersAPI = {
             .then(response => {
                 return response.data;
             })
+    },
+    getFriends() {
+        return instance.get(`users?friend=true`)
+            .then(response => {
+                return response.data;
+            })
     }
 };
 
