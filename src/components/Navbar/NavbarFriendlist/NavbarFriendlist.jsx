@@ -19,11 +19,10 @@ const NavbarFriendlist = (props) => {
                          }/>
                 </div>
             </NavLink>
-            {props.status ?
+            {props.status &&
                 <div className={s.status}>
                     {props.status}
                 </div>
-                : null
             }
 
         </div>

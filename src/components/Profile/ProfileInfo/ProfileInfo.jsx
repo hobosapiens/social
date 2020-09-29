@@ -49,6 +49,10 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
 };
 
 const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus}) => {
+
+    let contacts = profile.contacts;
+    Object.keys(contacts).forEach((key) => (contacts[key] == null || contacts[key] == '') && delete contacts[key]);
+
     return (
         <div>
             <div className={s.fullName}><b>{profile.fullName}</b></div>
@@ -62,11 +66,13 @@ const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus}) => 
                 </div>
                 : null
             }
-            <div className={s.contacts}>
-                {Object.keys(profile.contacts).map(key => {
-                    return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
-                })}
-            </div>
+            { contacts &&
+                <div className={s.contacts}>
+                    {Object.keys(contacts).map(key => {
+                        return <Contact key={key} contactTitle={key} contactValue={contacts[key]}/>
+                    })}
+                </div>
+            }
             {isOwner && <div className={s.editBtn}>
                 <button onClick={goToEditMode}>EditMode</button>
             </div>}
