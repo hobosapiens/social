@@ -12,8 +12,12 @@
     cursor: default;
 }
 
-.pagination .pageNumber {
+.pagination .paginationLeftArrow {
+    margin-left: 5px;
+}
 
+.pagination .paginationRightArrow {
+    margin-right: 5px;
 }
 
 .pagination .paginationPrev,
@@ -21,12 +25,14 @@
     display: inline;
 }
 
-.pagination .paginationPrev button,
-.pagination .paginationPrev button:focus,
-.pagination .paginationNext button,
-.pagination .paginationNext button:focus {
-    border: none;
-    outline: none;
-    background: transparent;
-    cursor: pointer;
+.pagination .paginationPrev {
+    margin-right: 10px;
+}
+
+.pagination .paginationNext {
+    margin-left: 10px;
+}
+
+.pagination button:active, .pagination button:focus {
+    border: 1px solid #c75c5c;
 }

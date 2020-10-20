@@ -20,8 +20,8 @@ let Pagination = ({currentPage, totalItemsCount, pageSize, onPageChanged, portio
         <div className={s.pagination}>
             {portionNumber > 1 &&
             <div className={s.paginationPrev}>
-                <button onClick={() => { setPortionNumber(portionNumber - 1) }}>{'<<'}</button>
                 <button onClick={() => { setPortionNumber(1) }}>1...</button>
+                <button onClick={() => { setPortionNumber(portionNumber - 1) }} className={s.paginationLeftArrow}>{'<<'}</button>
             </div>}
             {pages
                 .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
@@ -37,8 +37,8 @@ let Pagination = ({currentPage, totalItemsCount, pageSize, onPageChanged, portio
                 })}
             {portionCount > portionNumber &&
                 <div className={s.paginationNext}>
+                    <button onClick={() => { setPortionNumber(portionNumber + 1) }} className={s.paginationRightArrow}>{'>>'}</button>
                     <button onClick={() => { setPortionNumber(portionCount) }}>...{pages.length}</button>
-                    <button onClick={() => { setPortionNumber(portionNumber + 1) }}>{'>>'}</button>
                 </div>
 
             }

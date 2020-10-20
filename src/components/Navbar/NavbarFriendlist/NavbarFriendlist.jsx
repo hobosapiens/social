@@ -8,9 +8,6 @@ const NavbarFriendlist = (props) => {
     return (
         <div className={s.friend}>
             <NavLink to={'/profile/' + props.id}>
-                <div className={s.name}>
-                    {props.name}
-                </div>
                 <div className={s.avaWrap}>
                     <img src={props.photo || userDefaultMale}
                          className={props.photo != null
@@ -18,12 +15,17 @@ const NavbarFriendlist = (props) => {
                              : s.profileAvaDefault
                          }/>
                 </div>
-            </NavLink>
-            {props.status &&
-                <div className={s.status}>
-                    {props.status}
+                <div className={s.friendDescription}>
+                    <div className={s.name}>
+                        {props.name}
+                    </div>
+                    {props.status &&
+                    <div className={s.status}>
+                        {props.status}
+                    </div>
+                    }
                 </div>
-            }
+            </NavLink>
 
         </div>
 

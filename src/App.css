@@ -1,22 +1,27 @@
 html {
     overflow-y: scroll;
+    overflow-x: hidden;
+    background: #191523;
 }
 
 .app-wrapper {
     display: grid;
     grid-template-areas: 'h h' 'n c' 'f f';
-    grid-template-rows: 100px 1fr auto;
-    grid-template-columns: 280px 10fr;
-    grid-gap: 10px;
+    grid-template-rows: 200px 1fr auto;
+    grid-template-columns: 250px 10fr;
+    grid-gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .app-wrapper-content {
     grid-area: c;
-    border: 1px solid darkgray;
     box-sizing: border-box;
     min-height: calc(100vh - 220px);
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+    box-shadow: 0px 1px 15px 0px rgba(51, 51, 51, 0.2);
 }
 
 img {
@@ -35,13 +40,53 @@ img {
     display: inline;
 }
 
-.initializePreloader {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .loading {
     padding: 20px;
+}
+
+button {
+    background: linear-gradient(45deg, #c75c5c 10%, #f5cf87 90%);
+    background-size: 200% 100%;
+    padding: 8px 15px;
+    border: 1px solid #c75c5c;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000000;
+    outline: none;
+    cursor: pointer;
+    font-family: Kulturista;
+    transition: all .3s ease;
+    box-sizing: border-box;
+}
+
+button:hover {
+    -webkit-animation: bruh 3s linear infinite;
+    animation: bruh 3s linear infinite;
+}
+
+button:active, button:focus {
+    border-color: #000000;
+}
+
+@-webkit-keyframes bruh {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes bruh {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
 }

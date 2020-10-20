@@ -12,7 +12,7 @@ const MyPosts = React.memo((props) => {
     return (
         <div className={s.posts}>
             <div className={s.postsTitle}>
-                <h3>my posts</h3>
+                <h3>My posts</h3>
             </div>
             <AddPostForm addPost={props.addPost} />
             {postsElements}

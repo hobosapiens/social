@@ -4,5 +4,24 @@
 }
 
 .status {
-    padding: 10px 0;
+    background: #F1F1F1;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0 0 0;
+    position: relative;
+}
+
+.status:after {
+    bottom: 100%;
+    left: 21px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-bottom-color: #F1F1F1;
+    border-width: 8px;
+    margin-left: 0px;
 }

@@ -7,29 +7,67 @@
 }
 
 .profileAva {
+    width: 250px;
+    height: 250px;
     position: relative;
+    outline: 1px solid white;
+    outline-offset: -1px;
 }
 
 .descriptionInfo {
-    padding: 0  0 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0 0 40px;
     box-sizing: border-box;
     max-width: calc(100% - 200px);
 }
 
 .contacts {
     display: inline-block;
-    margin-top: 10px;
+    margin: 15px 0 5px;
 }
 
-.contacts a {
-    display: block;
+.about {
+    margin-bottom: 10px;
+}
+
+.job {
+    margin-bottom: 15px;
+}
+
+.contact {
+    display: inline-block;;
+    margin-right: 10px;
+    margin-bottom: 10px;
     text-decoration: none;
-    color: gray;
+    background: linear-gradient(45deg, #c75c5c 10%, #f5cf87 90%);
+    background-size: 200% 100%;
+    padding: 8px 15px;
+    border: 1px solid #c75c5c;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000000;
+    outline: none;
+    cursor: pointer;
+    font-family: Kulturista;
+    transition: all .3s ease;
+    box-sizing: border-box;
 }
 
-.changeAvaBtn {
+.changeAva {
     position: absolute;
     left: 30px;
     top: 30px;
-    background: rgba(255,255,255,.8);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #c75c5c;
+    background: linear-gradient(45deg, #c75c5c 10%, #f5cf87 90%);
+    cursor: pointer;
+}
+
+.changeAvaBtn {
+    display: none;
 }

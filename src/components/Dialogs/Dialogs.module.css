@@ -57,4 +57,5 @@
 
 .addMessage button {
     width: 100px;
+    box-sizing: content-box;
 }

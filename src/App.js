@@ -40,9 +40,7 @@ class App extends Component {
         if (!this.props.initialized) {
             return (
                 <div className='app-wrapper'>
-                    <div className="initializePreloader">
-                        <Preloader className='initializePreloader'/>
-                    </div>
+                    <Preloader />
                 </div>
             )
         }

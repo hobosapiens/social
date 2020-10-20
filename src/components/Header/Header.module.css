@@ -1,21 +1,69 @@
+@font-face {font-family: "Kulturista"; src: url("//db.onlinewebfonts.com/t/ac9d8158b3517faaa24ecd1ca8a4e001.eot"); src: url("//db.onlinewebfonts.com/t/ac9d8158b3517faaa24ecd1ca8a4e001.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ac9d8158b3517faaa24ecd1ca8a4e001.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ac9d8158b3517faaa24ecd1ca8a4e001.woff") format("woff"), url("//db.onlinewebfonts.com/t/ac9d8158b3517faaa24ecd1ca8a4e001.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ac9d8158b3517faaa24ecd1ca8a4e001.svg#Kulturista") format("svg"); }
+
 .header {
     grid-area: h;
-    background-color: lightgray;
-    padding: 20px;
+    background: transparent;
+    padding: 20px 0;
     display: flex;
     align-items: center;
+    height: 250px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
 }
 
-.header img {
-    max-height: 100%;
-    margin-right: auto;
+.header:before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 500px;
+    background: url('../../assets/images/campfire.jpg') center bottom no-repeat;
+    background-size: cover;
+    width: 100vw;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.header_text {
+    width: 250px;
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #c75c5c 10%, #f5cf87 90%);
+    color: #ffffff;
+    border: 1px solid #c75c5c;
+    font-family: Kulturista;
+    line-height: initial;
+    padding: 10px 10px 10px 20px;
+}
+
+.header_text .title {
+    font-size: 30px;
+    display: block;
+    text-shadow: 1px 1px 1px #000000;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.header_text .subtitle {
+    font-size: 14px;
+    display: block;
+    text-shadow: 1px 1px 1px #000000;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
 }
 
 .loginBlock {
     margin-left: auto;
 }
 
-.loginBlock span button {
+.loginBlock span {
+    color: white;
+}
+
+.loginBlock button {
     margin-left: 5px;
     background: transparent;
     border: none;
@@ -24,10 +72,10 @@
 }
 
 .loginBlock span svg:hover path {
-    fill: darkgray;
+    fill: gray;
 }
 
 .login {
-    color: #000;
+    color: #ffffff;
     text-decoration: none;
 }

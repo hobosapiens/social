@@ -1,18 +1,35 @@
 .nav {
     grid-area: n;
-    background-color: darkgray;
+    background: #ffffff;
+    box-shadow: 0px 1px 15px 0px rgba(51, 51, 51, 0.2);
     padding: 20px;
+    position: relative;
+    z-index: 2;
 }
 .item {
     padding: 5px 0;
 }
 
 .item a {
-    color: white;
+    color: #191523;
+    text-decoration: none;
+    border-bottom: 1px solid #C75C5C;
+    transition: all .3s ease;
+    padding: 5px;
+    display: inline-block;
+}
+
+.item:hover > a:not(.active) {
+    padding-right: 20px;
 }
 
 .item a.active {
-    color: black;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000000;
+    background: linear-gradient(45deg, #c75c5c 10%, #f5cf87 90%);
+    border: 1px solid #c75c5c;
+    box-sizing: border-box;
+    padding-right: 20px;
 }
 
 .menu {
@@ -21,6 +38,7 @@
 }
 
 .friends .title {
+    color: #000000;
     margin: 40px 0 10px;
     font-weight: bold;
 }

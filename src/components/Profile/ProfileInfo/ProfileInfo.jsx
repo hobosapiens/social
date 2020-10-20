@@ -5,6 +5,7 @@ import Preloader from "../../Common/Preloader/Preloader";
 import {ReactComponent as JobIcon} from '../../../assets/images/jobIcon.svg';
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import ProfileDataForm from "./profileDataForm";
+import {ReactComponent as UploadIcon} from '../../../assets/images/uload.svg';
 
 const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
 
@@ -36,7 +37,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
                      ? s.profileAva
                      : s.profileAvaDefault
                  }/>
-            {isOwner && <input type={"file"} className={s.changeAvaBtn} onChange={onMainPhotoSelected}/>}
+            {isOwner && <label className={s.changeAva}><UploadIcon /><input type={"file"} className={s.changeAvaBtn} onChange={onMainPhotoSelected} /></label>}
             <div className={s.descriptionInfo}>
                 {editMode
                     ? <ProfileDataForm profile={profile} initialValues={profile} onSubmit={onSubmit}/>
@@ -54,10 +55,17 @@ const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus}) => 
     Object.keys(contacts).forEach((key) => (contacts[key] == null || contacts[key] == '') && delete contacts[key]);
 
     return (
-        <div>
+        <>
             <div className={s.fullName}><b>{profile.fullName}</b></div>
-            <div className={s.about}>{profile.aboutMe}</div>
             <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
+            { contacts &&
+                <div className={s.contacts}>
+                    {Object.keys(contacts).map(key => {
+                        return <Contact key={key} contactTitle={key} contactValue={contacts[key]} />
+                    })}
+                </div>
+            }
+            <div className={s.about}>{profile.aboutMe}</div>
             {profile.lookingForAJob
                 ? <div className={s.job}>
                     <JobIcon/>
@@ -66,25 +74,16 @@ const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus}) => 
                 </div>
                 : null
             }
-            { contacts &&
-                <div className={s.contacts}>
-                    {Object.keys(contacts).map(key => {
-                        return <Contact key={key} contactTitle={key} contactValue={contacts[key]}/>
-                    })}
-                </div>
-            }
             {isOwner && <div className={s.editBtn}>
-                <button onClick={goToEditMode}>EditMode</button>
+                <button onClick={goToEditMode}>Edit Mode</button>
             </div>}
-        </div>
+        </>
     )
 };
 
 const Contact = ({contactTitle, contactValue}) => {
     return (
-        <div>
-            <b>{contactTitle}</b>: {contactValue}
-        </div>
+        <a href={contactValue} target="_blank" className={s.contact}>{contactTitle}</a>
     )
 };
 

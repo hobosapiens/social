@@ -2,8 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
+    width: calc(100% / 3);
+    min-width: 60px;
     padding: 10px 0;
+}
+
+.friend:hover .friendDescription {
+    display: block;
 }
 
 .avaWrap {
@@ -18,7 +23,6 @@
 .avaWrap img {
     max-width: none;
     min-width: 100%;
-    filter: grayscale(1);
 }
 
 .friend a {
@@ -26,31 +30,26 @@
     color: #000;
 }
 
-.friend:hover img {
-    filter: none;
-}
-
-.friend:hover .avaWrap {
-    box-shadow: 0 0 2px 2px rgba(0,0,0,0.3);
-}
-
 .name {
     margin-bottom: 5px;
-    color: white;
+    color: #000;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
-.status {
-    background: white;
+.friendDescription {
+    display: none;
+    background: #F1F1F1;
     padding: 10px;
     border-radius: 10px;
-    position: relative;
-    position: relative;
-    margin-top: 12px;
+    position: absolute;
+    max-width: 400px;
+    min-width: 120px;
 }
 
-.status:after {
+.friendDescription:after {
     bottom: 100%;
-    left: 14px;
+    left: 21px;
     border: solid transparent;
     content: " ";
     height: 0;
@@ -58,7 +57,12 @@
     position: absolute;
     pointer-events: none;
     border-color: rgba(136, 183, 213, 0);
-    border-bottom-color: white;
+    border-bottom-color: #F1F1F1;
     border-width: 8px;
     margin-left: 0px;
+}
+
+.status {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
