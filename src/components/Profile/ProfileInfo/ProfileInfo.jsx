@@ -3,7 +3,7 @@ import s from './ProfileInfo.module.css';
 import userDefaultMale from '../../../assets/images/userDefaultMale.png'
 import Preloader from "../../Common/Preloader/Preloader";
 import {ReactComponent as JobIcon} from '../../../assets/images/jobIcon.svg';
-import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
+import ProfileStatus from "./ProfileStatus";
 import ProfileDataForm from "./profileDataForm";
 import {ReactComponent as UploadIcon} from '../../../assets/images/uload.svg';
 
@@ -35,7 +35,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
             <img src={profile.photos.large || userDefaultMale}
                  className={profile.photos.large != null
                      ? s.profileAva
-                     : s.profileAvaDefault
+                     : s.profileAvaDefaultprofi
                  } alt={'Profile Ava'} />
             {isOwner && <label className={s.changeAva}><UploadIcon /><input type={"file"} className={s.changeAvaBtn} onChange={onMainPhotoSelected} /></label>}
             <div className={s.descriptionInfo}>
@@ -57,7 +57,7 @@ const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus}) => 
     return (
         <>
             <div className={s.fullName}><b>{profile.fullName}</b></div>
-            <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
+            <ProfileStatus status={status} updateStatus={updateStatus}/>
             { contacts &&
                 <div className={s.contacts}>
                     {Object.keys(contacts).map(key => {
