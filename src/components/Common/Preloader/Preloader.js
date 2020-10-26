@@ -4,7 +4,7 @@ import React from 'react';
 
 let Preloader = (props) => {
     return <div className={s.preloaderWrapper}>
-        <img src={preloader} className={s.preloader}/>
+        <img src={preloader} alt={'preloader'} className={s.preloader}/>
     </div>
 };
 

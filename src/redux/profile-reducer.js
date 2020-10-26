@@ -1,6 +1,7 @@
 import {profileAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
 
+const SET_POSTS = 'SET_POSTS';
 const ADD_POST = 'ADD-POST';
 const DELETE_POST = 'DELETE_POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
@@ -9,10 +10,7 @@ const SAVE_PHOTO_SUCCESS = 'SAVE_PHOTO_SUCCESS';
 
 
 let initialState = {
-    posts: [
-        {id: 1, likeCount: 22, post: 'Commodi earum eligendi impedit itaque nisi nostrum placeat? Debitis delectus eos laborum, quae saepe tempore? Architecto molestiae nostrum quibusdam sunt vel! Quibusdam.'},
-        {id: 2, likeCount: 13, post: 'Aut illum impedit sit tenetur. Aliquam beatae consectetur, corporis eaque, est excepturi in iure laboriosam laudantium minima possimus reprehenderit sunt tenetur, ut.'},
-    ],
+    posts: [],
     profile: null,
     status: ''
 };
@@ -20,10 +18,14 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
+        case SET_POSTS: {
+            return {
+                ...state,
+                posts: [...action.posts]
+            };
+        }
         case ADD_POST: {
             let newPost = {
-                id: 5,
-                likeCount: 0,
                 post: action.postText
             };
             return {
@@ -60,8 +62,17 @@ const profileReducer = (state = initialState, action) => {
     }
 };
 
+export const setPosts = (posts) => ({ type: SET_POSTS, posts });
+
+export const requestPosts = () => async (dispatch) => {
+
+    let response = await profileAPI.getPosts();
+    dispatch(setPosts(response.posts));
+
+};
+
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
-export const getUsertProfile = (userId) => async (dispatch) => {
+export const getUserProfile = (userId) => async (dispatch) => {
     let response = await profileAPI.getProfile(userId);
 
     dispatch(setUserProfile(response));
@@ -102,7 +113,7 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
     let response = await profileAPI.saveProfile(profile);
 
     if (response.resultCode === 0) {
-        dispatch(getUsertProfile(userId));
+        dispatch(getUserProfile(userId));
     } else {
         let key = response.messages[0].match(/Contacts->(\w+)/)[1].toLowerCase();
         dispatch(stopSubmit('edit-profile', {
@@ -111,7 +122,6 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
         return Promise.reject(response.messages[0]);
     }
 };
-
 
 
 export const addPost = (postText) => ({ type: ADD_POST, postText });

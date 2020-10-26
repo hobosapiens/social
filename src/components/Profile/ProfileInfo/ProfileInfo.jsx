@@ -36,7 +36,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
                  className={profile.photos.large != null
                      ? s.profileAva
                      : s.profileAvaDefault
-                 }/>
+                 } alt={'Profile Ava'} />
             {isOwner && <label className={s.changeAva}><UploadIcon /><input type={"file"} className={s.changeAvaBtn} onChange={onMainPhotoSelected} /></label>}
             <div className={s.descriptionInfo}>
                 {editMode
@@ -52,7 +52,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
 const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus}) => {
 
     let contacts = profile.contacts;
-    Object.keys(contacts).forEach((key) => (contacts[key] == null || contacts[key] == '') && delete contacts[key]);
+    Object.keys(contacts).forEach((key) => (contacts[key] === null || contacts[key] === '') && delete contacts[key]);
 
     return (
         <>
@@ -83,7 +83,7 @@ const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus}) => 
 
 const Contact = ({contactTitle, contactValue}) => {
     return (
-        <a href={contactValue} target="_blank" className={s.contact}>{contactTitle}</a>
+        <a href={contactValue} target="_blank" rel="noopener noreferrer" className={s.contact}>{contactTitle}</a>
     )
 };
 

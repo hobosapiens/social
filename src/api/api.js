@@ -8,6 +8,11 @@ const instance = axios.create({
     }
 });
 
+const mockey = axios.create({
+    withCredentials: true,
+    baseURL: 'https://run.mocky.io/v3/'
+});
+
 export const usersAPI = {
     getUsers(currentPage = 1, pageSize = 10) {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`)
@@ -24,6 +29,12 @@ export const usersAPI = {
 };
 
 export const profileAPI = {
+    getPosts() {
+        return mockey.get('d1c221ad-6065-4a54-90ef-479079ade8b3')
+            .then(response => {
+                return response.data;
+            })
+    },
     getProfile(userId) {
         return instance.get('profile/' + userId)
             .then(response => {

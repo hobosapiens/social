@@ -1,11 +1,13 @@
 .item {
-    padding: 10px 0;
+    padding: 10px;
+    background: #f1f1f1;
     display: flex;
+    margin-bottom: 10px;
 }
 
 .img {
     width: 50px;
-    height: auto;
+    height: 50px;
     margin-right: 20px;
 }
 

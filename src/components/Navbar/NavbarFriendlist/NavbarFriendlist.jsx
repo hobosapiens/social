@@ -13,7 +13,7 @@ const NavbarFriendlist = (props) => {
                          className={props.photo != null
                              ? s.profileAva
                              : s.profileAvaDefault
-                         }/>
+                         } alt={'Profile Ava'} />
                 </div>
                 <div className={s.friendDescription}>
                     <div className={s.name}>

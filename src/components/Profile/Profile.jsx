@@ -5,7 +5,6 @@ import MyPostsContainer from './MyPosts/MyPostsContainer';
 
 class Profile extends PureComponent {
     render() {
-
         return (
             <div className={s.profile}>
                 <ProfileInfo
@@ -16,7 +15,7 @@ class Profile extends PureComponent {
                     saveProfile={this.props.saveProfile}
                     updateStatus={this.props.updateStatus}
                 />
-                <MyPostsContainer/>
+                { this.props.isOwner && <MyPostsContainer userId={this.props.userId} /> }
             </div>
         )
     }

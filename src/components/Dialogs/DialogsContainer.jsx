@@ -13,17 +13,6 @@ let mapStateToProps = (state) => {
     }
 };
 
-// let mapDispatchToProps = (dispatch) => {
-//     return {
-//         addMessage: () => {
-//             dispatch(addMessageActionCreator());
-//         },
-//         messageChange: (text) => {
-//             dispatch(updateNewMessageTextActionCreator(text));
-//         }
-//     }
-// };
-
 export default compose(
     connect(mapStateToProps, { addMessage }),
     withAuthRedirect

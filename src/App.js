@@ -13,7 +13,6 @@ import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/Common/Preloader/Preloader";
-import SettingsContainer from "./components/Settings/SettingsContainer";
 import store from "./redux/redux-store";
 import {withSuspense} from "./hoc/withSuspense";
 
