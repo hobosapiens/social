@@ -54,6 +54,10 @@
     box-sizing: border-box;
 }
 
+.emptyContact {
+    display: none;
+}
+
 .changeAva {
     position: absolute;
     left: 30px;

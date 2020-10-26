@@ -6,6 +6,7 @@ import {ReactComponent as JobIcon} from '../../../assets/images/jobIcon.svg';
 import ProfileStatus from "./ProfileStatus";
 import ProfileDataForm from "./profileDataForm";
 import {ReactComponent as UploadIcon} from '../../../assets/images/uload.svg';
+import cn from 'classnames';
 
 const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
 
@@ -35,7 +36,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
             <img src={profile.photos.large || userDefaultMale}
                  className={profile.photos.large != null
                      ? s.profileAva
-                     : s.profileAvaDefaultprofi
+                     : s.profileAvaDefault
                  } alt={'Profile Ava'} />
             {isOwner && <label className={s.changeAva}><UploadIcon /><input type={"file"} className={s.changeAvaBtn} onChange={onMainPhotoSelected} /></label>}
             <div className={s.descriptionInfo}>
@@ -43,16 +44,16 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
                     ? <ProfileDataForm profile={profile} initialValues={profile} onSubmit={onSubmit}/>
                     : <ProfileData profile={profile} isOwner={isOwner} goToEditMode={() => {
                         setEditMode(true)
-                    }} status={status} updateStatus={updateStatus}/>}
+                    }} status={status} updateStatus={updateStatus} />}
             </div>
         </div>
     )
 };
 
-const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus}) => {
+const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus }) => {
 
     let contacts = profile.contacts;
-    Object.keys(contacts).forEach((key) => (contacts[key] === null || contacts[key] === '') && delete contacts[key]);
+    // Object.keys(contacts).forEach((key) => (contacts[key] === null || contacts[key] === '') && delete contacts[key]);
 
     return (
         <>
@@ -83,7 +84,7 @@ const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus}) => 
 
 const Contact = ({contactTitle, contactValue}) => {
     return (
-        <a href={contactValue} target="_blank" rel="noopener noreferrer" className={s.contact}>{contactTitle}</a>
+        <a className={cn({[s.emptyContact]: contactValue == null}, s.contact)} href={contactValue} target="_blank" rel="noopener noreferrer" >{contactTitle}</a>
     )
 };
 
