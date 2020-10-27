@@ -99,3 +99,12 @@ export const authAPI = {
         return instance.get('security/get-captcha-url')
     }
 };
+
+export const dialogsAPI = {
+    messgeDialogs() {
+        return mockey.get('d1c221ad-6065-4a54-90ef-479079ade8b3')
+            .then(response => {
+                return response.data;
+            })
+    },
+};

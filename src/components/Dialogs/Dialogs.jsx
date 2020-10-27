@@ -8,8 +8,8 @@ import AddDialogMessageForm from "./DialogForm";
 const Dialogs = (props) => {
 
     // Проходимся .map по массиву данных и создаем массив jsx элементов. Далее передаем их через пропсы в нужные компоненты.
-    let dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} id={d.id} key={d.id}/>);
-    let messagesElements = props.messages.map(m => <Message message={m.message} id={m.id} key={m.id} senderClass={m.senderClass}/>);
+    let dialogsElements = props.dialogs.map((d, index) => <DialogItem name={d.name} id={d.id} key={index}/>);
+    let messagesElements = props.messages.map((m, index) => <Message message={m.message} id={m.id} key={index} senderClass={m.senderClass}/>);
 
     return (
         <div className={s.dialogs}>

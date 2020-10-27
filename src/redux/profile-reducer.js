@@ -73,16 +73,18 @@ export const requestPosts = () => async (dispatch) => {
 
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
 export const getUserProfile = (userId) => async (dispatch) => {
-    let response = await profileAPI.getProfile(userId);
 
+    let response = await profileAPI.getProfile(userId);
     dispatch(setUserProfile(response));
+
 };
 
 export const setStatus = (status) => ({ type: SET_STATUS, status});
 export const getStatus = (userId) => async (dispatch) => {
-    let response = await profileAPI.getStatus(userId);
 
+    let response = await profileAPI.getStatus(userId);
     dispatch(setStatus(response.data));
+
 };
 
 export const updateStatus = (status) => async (dispatch) => {
