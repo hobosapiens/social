@@ -5,7 +5,7 @@ import * as s from './MyPosts.module.css'
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
 import {Textarea} from "../../Common/FormsControls/FormsControls";
 
-const maxLength10 = maxLengthCreator(10);
+const maxLength300 = maxLengthCreator(300);
 
 const PostForm = (props) => {
     return (
@@ -15,7 +15,7 @@ const PostForm = (props) => {
                     name={'postText'}
                     placeholder={'Post text...'}
                     component={Textarea}
-                    validate={[required, maxLength10]}
+                    validate={[required, maxLength300]}
                 />
                 <button type="submit">Add post</button>
             </div>
