@@ -1,17 +1,12 @@
-import {usersAPI} from "../api/api";
+import {dialogsAPI, usersAPI} from "../api/api";
 
 const ADD_MESSAGE = 'ADD-MESSAGE';
+const SET_MESSAGES = 'SET_MESSAGES';
 const SET_DIALOGS = 'SET_DIALOGS';
 
 let initialState = {
     dialogs: [],
-    messages: [
-        {id: 1, senderClass: 'me', message: 'Accusamus amet aperiam consequuntur corporis cum distinctio id ipsum, iure nemo nostrum.'},
-        {id: 2, senderClass: 'interlocutor', message: 'Ab consequatur ipsum quidem reprehenderit similique. Animi dolorem eius ex.'},
-        {id: 3, senderClass: 'me', message: 'A ad cum cumque eaque.'},
-        {id: 4, senderClass: 'me', message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, at corporis cum cumque.'},
-        {id: 5, senderClass: 'interlocutor', message: 'Asperiores at aut cupiditate!'},
-    ]
+    messages: []
 };
 
 const dialogsReducer = (state = initialState, action) => {
@@ -27,6 +22,12 @@ const dialogsReducer = (state = initialState, action) => {
                 messages: [...state.messages, newMessage]
             };
         }
+        case SET_MESSAGES: {
+            return {
+                ...state,
+                messages: [...action.messages]
+            };
+        }
         case SET_DIALOGS: {
             return {
                 ...state,
@@ -40,7 +41,15 @@ const dialogsReducer = (state = initialState, action) => {
 
 export const addMessage = (newMessageText) => ({ type: ADD_MESSAGE, newMessageText });
 
+export const setMessages = (messages) => ({ type: SET_MESSAGES, messages });
+export const requestMessages = () => async (dispatch) => {
+
+    let response = await dialogsAPI.getDialogs();
+    dispatch(setMessages(response.messages));
+};
+
 export const setDialogs = (dialogs) => ({ type: SET_DIALOGS, dialogs });
+
 export const requestDialogs = () => async (dispatch) => {
 
     let response = await usersAPI.getFriends();

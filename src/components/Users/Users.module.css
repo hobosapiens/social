@@ -82,11 +82,11 @@
 }
 
 .avaWrap a {
-    border-radius: 50%;
     overflow: hidden;
     height: 100px;
     width: 100px;
     margin: auto;
+    background-color: #E1E1E1;
 }
 
 .userWithAva {

@@ -5,39 +5,61 @@
 }
 
 .dialogsItems {
+    display: flex;
+    flex-direction: column;
     padding-right: 20px;
 }
 
 .dialog {
+    display: inline-flex;
     margin-bottom: 10px;
 }
 
 .dialog a {
     color: #000;
-}
-
-.active {
+    font-size: 13px;
     text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #c75c5c;
+    outline: none;
+    cursor: pointer;
+    font-family: Kulturista;
+    transition: all .3s ease;
+    box-sizing: border-box;
 }
 
-.active::after {
-    content: '✍';
-    display: inline-block;
-    position: relative;
-    bottom: 4px;
-    margin-left: 5px;
+.dialog a.active {
+    background: linear-gradient(45deg, #c75c5c 10%, #f5cf87 90%);
+    background-size: 200% 100%;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000000;
 }
 
 .messages {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 20px;
-    border-left: 1px solid #000;
+}
+
+.messagesWrapper {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f1f1f1;
 }
 
 .message {
-    margin-bottom: 10px;
+    padding: 10px;
+    border-left: 1px solid #000;
+}
+
+.message:not(:last-of-type) {
+    margin-bottom: 15px;
 }
 
 .addMessage {

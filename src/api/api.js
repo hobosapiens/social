@@ -101,8 +101,8 @@ export const authAPI = {
 };
 
 export const dialogsAPI = {
-    messgeDialogs() {
-        return mockey.get('d1c221ad-6065-4a54-90ef-479079ade8b3')
+    getDialogs() {
+        return mockey.get('2c3d6b1d-2dba-4193-b27f-199de9d29356')
             .then(response => {
                 return response.data;
             })

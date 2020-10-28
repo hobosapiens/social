@@ -1,5 +1,5 @@
 import React from 'react'
-import {addMessage, requestDialogs} from '../../redux/dialogs-reducer';
+import {addMessage, requestDialogs, requestMessages} from '../../redux/dialogs-reducer';
 import Dialogs from './Dialogs';
 import {connect} from 'react-redux';
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
@@ -9,6 +9,7 @@ class dialogsContainer extends React.Component {
 
     componentDidMount() {
         this.props.requestDialogs();
+        this.props.requestMessages();
     }
 
     render() {
@@ -25,6 +26,6 @@ let mapStateToProps = (state) => {
 };
 
 export default compose(
-    connect(mapStateToProps, { addMessage, requestDialogs }),
+    connect(mapStateToProps, { addMessage, requestDialogs, requestMessages }),
     withAuthRedirect
 )(dialogsContainer);

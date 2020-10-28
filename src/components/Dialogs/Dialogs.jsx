@@ -17,7 +17,9 @@ const Dialogs = (props) => {
                 {dialogsElements}
             </div>
             <div className={s.messages}>
-                {messagesElements}
+                <div className={s.messagesWrapper}>
+                    {messagesElements}
+                </div>
                 <AddDialogMessageForm {...props} />
             </div>
         </div>

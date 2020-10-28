@@ -28,18 +28,6 @@ img {
     max-width: 100%;
 }
 
-.interlocutor {
-    padding: 5px;
-    background: #f2f2f2;
-    text-align: right;
-    display: inline;
-}
-
-.me {
-    padding: 5px;
-    display: inline;
-}
-
 .loading {
     padding: 20px;
 }

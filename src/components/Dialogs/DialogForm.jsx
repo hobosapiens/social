@@ -36,9 +36,7 @@ const AddDialogMessageForm = (props) => {
     const addMessage = (values) => {
         props.addMessage(values.messageText);
     };
-    return <div className={s.login}>
-        <DialogReduxForm onSubmit={addMessage} />
-    </div>
+    return <DialogReduxForm onSubmit={addMessage} />
 };
 
 export default AddDialogMessageForm;
