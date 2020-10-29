@@ -28,6 +28,10 @@
     margin: 15px 0 5px;
 }
 
+.contacts:first-of-type {
+    margin-top: 0;
+}
+
 .about {
     margin-bottom: 10px;
 }
@@ -74,4 +78,105 @@
 
 .changeAvaBtn {
     display: none;
+}
+
+.profileEdit {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profileEdit .profileEditInfo, .profileEdit .profileEditContacts {
+    width: calc(50% - 20px);
+}
+
+.profileEdit .profileEditInfo {
+    margin-right: 40px;
+}
+
+.profileEdit .profileEditContacts {
+    display: flex;
+    flex-direction: column;
+}
+
+.profileEdit .profileEditInfo > div {
+    flex-grow: 1;
+}
+
+.profileEdit input:not([type="checkbox"]), .profileEdit textarea {
+    width: 240px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.profileEdit .fullName, .profileEdit .about, .profileEdit .jobSkills {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profileEdit .fullName b, .profileEdit .about b, .profileEdit .jobSkills b {
+    margin-bottom: 10px;
+}
+
+.profileEdit .jobCheck {
+    margin: 20px 0;
+    display: flex;
+}
+
+.profileEdit .jobCheck b {
+    margin-right: 10px;
+}
+
+.profileEdit .jobCheck input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    margin: 0;
+}
+
+.profileEdit .jobCheck label {
+    cursor: pointer;
+    position: relative;
+}
+
+.profileEdit .jobCheck label:after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    box-sizing: border-box;
+    display: block;
+    background: linear-gradient(45deg, #c75c5c 10%, #f5cf87 90%);
+    right: -34px;
+    top: -4px;
+    z-index: 1;
+}
+
+.profileEdit .jobCheck label:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    background: white;
+    display: block;
+    right: -30px;
+    top: 0;
+    color: #DD9471;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+
+.profileEdit .jobCheck input[type="checkbox"]:checked + label:before {
+    content: "\2714";
+}
+
+.profileEdit .profileEditContacts b {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.profileEdit .profileEditContacts button {
+    margin-top: 20px;
 }

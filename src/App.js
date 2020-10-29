@@ -60,7 +60,7 @@ class App extends Component {
                         <Route path='*' render={() => <div>404 NOT FOUND</div>}/>
                     </Switch>
                 </div>
-                <Footer/>
+                {/*<Footer/>*/}
             </div>
         );
     }

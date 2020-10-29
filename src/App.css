@@ -92,4 +92,12 @@ textarea, textarea:focus, textarea:active {
     background: #F1F1F1;
     border: 0;
     outline: none;
+    resize: vertical;
+}
+
+input[type="text"] {
+    padding: 5px;
+    background: #F1F1F1;
+    border: 0;
+    outline: none;
 }
