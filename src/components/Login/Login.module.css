@@ -11,11 +11,9 @@
 }
 
 .login label {
-    display: inline-flex;
-    align-items: flex-start;
-    line-height: 11px;
-    color: gray;
+    display: block;
     font-size: 15px;
+    margin: 10px 0;
 }
 
 .login label input {
@@ -35,7 +33,6 @@
 }
 
 .login button[type='submit'] {
-    background: green;
     margin-right: 10px;
 }
 

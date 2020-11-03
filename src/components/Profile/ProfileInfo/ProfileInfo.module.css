@@ -40,6 +40,10 @@
     margin-bottom: 15px;
 }
 
+.lookingForAJob {
+    margin-bottom: 10px;
+}
+
 .contact {
     display: inline-block;;
     margin-right: 10px;
@@ -86,7 +90,7 @@
 }
 
 .profileEdit .profileEditInfo, .profileEdit .profileEditContacts {
-    width: calc(50% - 20px);
+    width: 240px;
 }
 
 .profileEdit .profileEditInfo {
@@ -125,51 +129,6 @@
 
 .profileEdit .jobCheck b {
     margin-right: 10px;
-}
-
-.profileEdit .jobCheck input[type="checkbox"] {
-    opacity: 0;
-    width: 0;
-    margin: 0;
-}
-
-.profileEdit .jobCheck label {
-    cursor: pointer;
-    position: relative;
-}
-
-.profileEdit .jobCheck label:after {
-    content: '';
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    box-sizing: border-box;
-    display: block;
-    background: linear-gradient(45deg, #c75c5c 10%, #f5cf87 90%);
-    right: -34px;
-    top: -4px;
-    z-index: 1;
-}
-
-.profileEdit .jobCheck label:before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    box-sizing: border-box;
-    background: white;
-    display: block;
-    right: -30px;
-    top: 0;
-    color: #DD9471;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    z-index: 2;
-}
-
-.profileEdit .jobCheck input[type="checkbox"]:checked + label:before {
-    content: "\2714";
 }
 
 .profileEdit .profileEditContacts b {

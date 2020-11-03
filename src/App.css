@@ -101,3 +101,50 @@ input[type="text"] {
     border: 0;
     outline: none;
 }
+
+input[type="checkbox"] {
+    display: none;
+    opacity: 0;
+    width: 0;
+    margin: 0;
+}
+
+input[type="checkbox"] + label {
+    cursor: pointer;
+    position: relative;
+
+}
+
+input[type="checkbox"] + label:after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    box-sizing: border-box;
+    display: block;
+    background: linear-gradient(45deg, #c75c5c 10%, #f5cf87 90%);
+    right: -39px;
+    top: -4px;
+    z-index: 1;
+}
+
+input[type="checkbox"] + label:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    background: white;
+    display: block;
+    right: -35px;
+    top: 0;
+    color: #DD9471;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+
+input[type="checkbox"]:checked + label:before {
+    content: "\2714";
+}

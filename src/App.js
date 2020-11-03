@@ -21,7 +21,6 @@ const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileCo
 
 class App extends Component {
     catchAllUnhandledErrors = (promiseRejectionEvent) => {
-        alert('There is some problems');
         console.log(promiseRejectionEvent);
     };
 

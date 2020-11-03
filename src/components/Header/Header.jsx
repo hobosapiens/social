@@ -16,11 +16,11 @@ const Header = (props) => {
                 <span className={s.subtitle}>Demo social network</span>
             </div>
             <div className={s.loginBlock}>
-                {props.isAuth
-                    ? <div>
+                {props.isAuth ?
+                    <>
                         <span>{props.login}</span>
                         <button type={'button'} onClick={logout}><LogOutIcon/></button>
-                    </div>
+                    </>
                     : <NavLink to={'/login'} className={s.login}>Login</NavLink>}
             </div>
         </header>

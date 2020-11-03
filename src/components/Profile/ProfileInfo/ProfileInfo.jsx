@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import s from './ProfileInfo.module.css';
 import userDefaultMale from '../../../assets/images/userDefaultMale.png'
 import Preloader from "../../Common/Preloader/Preloader";
-import {ReactComponent as JobIcon} from '../../../assets/images/jobIcon.svg';
 import ProfileStatus from "./ProfileStatus";
 import ProfileDataForm from "./profileDataForm";
 import {ReactComponent as UploadIcon} from '../../../assets/images/uload.svg';
@@ -53,7 +52,6 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
 const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus }) => {
 
     let contacts = profile.contacts;
-    // Object.keys(contacts).forEach((key) => (contacts[key] === null || contacts[key] === '') && delete contacts[key]);
 
     return (
         <>
@@ -66,14 +64,21 @@ const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus }) =>
                     })}
                 </div>
             }
-            <div className={s.about}>{profile.aboutMe}</div>
-            {profile.lookingForAJob
-                ? <div className={s.job}>
-                    <JobIcon/>
-                    <span className={s.jobText}
-                          style={{'marginLeft': '10px'}}>{profile.lookingForAJobDescription}</span>
+            {profile.aboutMe &&
+                <div className={s.about}>
+                    <b>About me: </b>{profile.aboutMe}
                 </div>
-                : null
+            }
+            {profile.lookingForAJob &&
+                <div className={s.job}>
+                    <div className={s.lookingForAJob}>
+                        <b>Looking For A Job!</b>
+                    </div>
+                    <div className={s.lookingForAJobDescription}>
+                        <b>My skills: </b>
+                        <span className={s.jobText}>{profile.lookingForAJobDescription}</span>
+                    </div>
+                </div>
             }
             {isOwner && <div className={s.editBtn}>
                 <button onClick={goToEditMode}>Edit Mode</button>

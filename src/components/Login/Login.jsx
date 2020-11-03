@@ -15,7 +15,7 @@ const LoginForm = ({handleSubmit, error, captchaURL}) => {
         <form onSubmit={handleSubmit}>
                 {createField('@email','email', Input, 'text', [required, maxLength30])}
                 {createField('Password','password', Input, 'password', [required, maxLength30])}
-                {createField(null,'rememberMe', Input, 'checkbox', null, 'remember me')}
+                {createField(null,'rememberMe', Input, 'checkbox', null, null, 'rememberMe', 'Remember me')}
 
             { captchaURL &&
                 <div className={s.captcha}>

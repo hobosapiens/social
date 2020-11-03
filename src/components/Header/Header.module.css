@@ -57,14 +57,23 @@
 
 .loginBlock {
     margin-left: auto;
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #c75c5c 10%, #f5cf87 90%);
+    color: #ffffff;
+    border: 1px solid #c75c5c;
+    font-family: Kulturista;
+    line-height: initial;
+    padding: 10px 10px 10px 20px;
 }
 
 .loginBlock span {
-    color: white;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #000000;
 }
 
 .loginBlock button {
-    margin-left: 5px;
+    margin-left: 10px;
+    padding: 0;
     background: transparent;
     border: none;
     outline: none;
@@ -77,5 +86,6 @@
 
 .login {
     color: #ffffff;
+    text-shadow: 1px 1px 1px #000000;
     text-decoration: none;
 }
