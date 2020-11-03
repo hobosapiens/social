@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/social/static/css/main.a499a33e.chunk.css",
-    "main.js": "/social/static/js/main.6e6518d4.chunk.js",
-    "main.js.map": "/social/static/js/main.6e6518d4.chunk.js.map",
+    "main.css": "/social/static/css/main.1158c487.chunk.css",
+    "main.js": "/social/static/js/main.582ee1c7.chunk.js",
+    "main.js.map": "/social/static/js/main.582ee1c7.chunk.js.map",
     "runtime-main.js": "/social/static/js/runtime-main.642fa093.js",
     "runtime-main.js.map": "/social/static/js/runtime-main.642fa093.js.map",
     "static/js/2.134358ba.chunk.js": "/social/static/js/2.134358ba.chunk.js",
@@ -14,14 +14,14 @@
     "static/js/4.606db8fe.chunk.js": "/social/static/js/4.606db8fe.chunk.js",
     "static/js/4.606db8fe.chunk.js.map": "/social/static/js/4.606db8fe.chunk.js.map",
     "index.html": "/social/index.html",
-    "precache-manifest.af41b23f4ddc37e04d50b537b81b73da.js": "/social/precache-manifest.af41b23f4ddc37e04d50b537b81b73da.js",
+    "precache-manifest.c02ac326316221f29ae34c3a3fc49efa.js": "/social/precache-manifest.c02ac326316221f29ae34c3a3fc49efa.js",
     "service-worker.js": "/social/service-worker.js",
     "static/css/3.544bf546.chunk.css.map": "/social/static/css/3.544bf546.chunk.css.map",
     "static/css/4.ba5b07ef.chunk.css.map": "/social/static/css/4.ba5b07ef.chunk.css.map",
-    "static/css/main.a499a33e.chunk.css.map": "/social/static/css/main.a499a33e.chunk.css.map",
+    "static/css/main.1158c487.chunk.css.map": "/social/static/css/main.1158c487.chunk.css.map",
     "static/js/2.134358ba.chunk.js.LICENSE.txt": "/social/static/js/2.134358ba.chunk.js.LICENSE.txt",
     "static/media/Header.module.css": "/social/static/media/campfire.9bf0d98d.jpg",
-    "static/media/logout.456d921f.svg": "/social/static/media/logout.456d921f.svg",
+    "static/media/logout.53f0843a.svg": "/social/static/media/logout.53f0843a.svg",
     "static/media/preloaderCampfire.gif": "/social/static/media/preloaderCampfire.3f27a8c5.gif",
     "static/media/uload.556757ff.svg": "/social/static/media/uload.556757ff.svg",
     "static/media/userDefaultMale.png": "/social/static/media/userDefaultMale.07f6f575.png"
@@ -29,7 +29,7 @@
   "entrypoints": [
     "static/js/runtime-main.642fa093.js",
     "static/js/2.134358ba.chunk.js",
-    "static/css/main.a499a33e.chunk.css",
-    "static/js/main.6e6518d4.chunk.js"
+    "static/css/main.1158c487.chunk.css",
+    "static/js/main.582ee1c7.chunk.js"
   ]
 }
