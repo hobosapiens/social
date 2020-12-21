@@ -26,6 +26,7 @@
     font-family: Kulturista;
     transition: all .3s ease;
     box-sizing: border-box;
+    line-height: 1em;
 }
 
 .dialog a.active {
