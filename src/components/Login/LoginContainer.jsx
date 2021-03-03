@@ -6,6 +6,7 @@ import {logInUser, logOutUser} from "../../redux/auth-reducer";
 class LoginContainer extends React.Component {
     componentDidMount() {
     }
+
     render() {
         return (
             <Login {...this.props}

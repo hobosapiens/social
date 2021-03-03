@@ -32,7 +32,7 @@ const Navbar = (props) => {
             <div className={s.friends}>
                 <div className={s.title}>Friends:</div>
                 <div className={s.friendsList}>
-                    { friendsItems }
+                    {friendsItems}
                 </div>
             </div>
         </nav>

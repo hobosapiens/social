@@ -22,7 +22,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
     };
 
     let onSubmit = (formData) => {
-        const promise = saveProfile(formData)
+        const promise = saveProfile(formData);
         promise.then(
             () => {
                 setEditMode(false);
@@ -36,20 +36,21 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
                  className={profile.photos.large != null
                      ? s.profileAva
                      : s.profileAvaDefault
-                 } alt={'Profile Ava'} />
-            {isOwner && <label className={s.changeAva}><UploadIcon /><input type={"file"} className={s.changeAvaBtn} onChange={onMainPhotoSelected} /></label>}
+                 } alt={'Profile Ava'}/>
+            {isOwner && <label className={s.changeAva}><UploadIcon/><input type={"file"} className={s.changeAvaBtn}
+                                                                           onChange={onMainPhotoSelected}/></label>}
             <div className={s.descriptionInfo}>
                 {editMode
                     ? <ProfileDataForm profile={profile} initialValues={profile} onSubmit={onSubmit}/>
                     : <ProfileData profile={profile} isOwner={isOwner} goToEditMode={() => {
                         setEditMode(true)
-                    }} status={status} updateStatus={updateStatus} />}
+                    }} status={status} updateStatus={updateStatus}/>}
             </div>
         </div>
     )
 };
 
-const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus }) => {
+const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus}) => {
 
     let contacts = profile.contacts;
 
@@ -57,28 +58,28 @@ const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus }) =>
         <>
             <div className={s.fullName}><b>{profile.fullName}</b></div>
             <ProfileStatus status={status} updateStatus={updateStatus}/>
-            { contacts &&
-                <div className={s.contacts}>
-                    {Object.keys(contacts).map(key => {
-                        return <Contact key={key} contactTitle={key} contactValue={contacts[key]} />
-                    })}
-                </div>
+            {contacts &&
+            <div className={s.contacts}>
+                {Object.keys(contacts).map(key => {
+                    return <Contact key={key} contactTitle={key} contactValue={contacts[key]}/>
+                })}
+            </div>
             }
             {profile.aboutMe &&
-                <div className={s.about}>
-                    <b>About me: </b>{profile.aboutMe}
-                </div>
+            <div className={s.about}>
+                <b>About me: </b>{profile.aboutMe}
+            </div>
             }
             {profile.lookingForAJob &&
-                <div className={s.job}>
-                    <div className={s.lookingForAJob}>
-                        <b>Looking For A Job!</b>
-                    </div>
-                    <div className={s.lookingForAJobDescription}>
-                        <b>My skills: </b>
-                        <span className={s.jobText}>{profile.lookingForAJobDescription}</span>
-                    </div>
+            <div className={s.job}>
+                <div className={s.lookingForAJob}>
+                    <b>Looking For A Job!</b>
                 </div>
+                <div className={s.lookingForAJobDescription}>
+                    <b>My skills: </b>
+                    <span className={s.jobText}>{profile.lookingForAJobDescription}</span>
+                </div>
+            </div>
             }
             {isOwner && <div className={s.editBtn}>
                 <button onClick={goToEditMode}>Edit Mode</button>
@@ -89,7 +90,8 @@ const ProfileData = ({profile, isOwner, goToEditMode, status, updateStatus }) =>
 
 const Contact = ({contactTitle, contactValue}) => {
     return (
-        <a className={cn({[s.emptyContact]: contactValue == null}, s.contact)} href={contactValue} target="_blank" rel="noopener noreferrer" >{contactTitle}</a>
+        <a className={cn({[s.emptyContact]: contactValue == null}, s.contact)} href={contactValue} target="_blank"
+           rel="noopener noreferrer">{contactTitle}</a>
     )
 };
 

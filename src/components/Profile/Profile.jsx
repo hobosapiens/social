@@ -15,7 +15,7 @@ class Profile extends PureComponent {
                     saveProfile={this.props.saveProfile}
                     updateStatus={this.props.updateStatus}
                 />
-                { this.props.isOwner && <MyPostsContainer userId={this.props.userId} /> }
+                {this.props.isOwner && <MyPostsContainer userId={this.props.userId}/>}
             </div>
         )
     }

@@ -60,7 +60,7 @@ export const profileAPI = {
             "status": statusText
         })
     },
-    saveProfile(profile){
+    saveProfile(profile) {
         return instance.put('profile/', profile).then(response => {
             return response.data;
         })
@@ -90,7 +90,7 @@ export const authAPI = {
             })
     },
     logIn(email, password, rememberMe = false, captcha = null) {
-        return instance.post('auth/login', { email, password, rememberMe, captcha })
+        return instance.post('auth/login', {email, password, rememberMe, captcha})
     },
     logOut() {
         return instance.delete('auth/login')

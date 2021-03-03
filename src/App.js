@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {HashRouter, Redirect, Route, Switch, withRouter} from 'react-router-dom';
 
 import './App.css';
-import Footer from './components/Footer/Footer'
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import NavbarContainer from './components/Navbar/NavbarContainer';
@@ -38,7 +37,7 @@ class App extends Component {
         if (!this.props.initialized) {
             return (
                 <div className='app-wrapper'>
-                    <Preloader />
+                    <Preloader/>
                 </div>
             )
         }

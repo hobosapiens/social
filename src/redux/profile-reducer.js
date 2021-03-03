@@ -62,7 +62,7 @@ const profileReducer = (state = initialState, action) => {
     }
 };
 
-export const setPosts = (posts) => ({ type: SET_POSTS, posts });
+export const setPosts = (posts) => ({type: SET_POSTS, posts});
 
 export const requestPosts = () => async (dispatch) => {
 
@@ -71,7 +71,7 @@ export const requestPosts = () => async (dispatch) => {
 
 };
 
-export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
+export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const getUserProfile = (userId) => async (dispatch) => {
 
     let response = await profileAPI.getProfile(userId);
@@ -79,7 +79,7 @@ export const getUserProfile = (userId) => async (dispatch) => {
 
 };
 
-export const setStatus = (status) => ({ type: SET_STATUS, status});
+export const setStatus = (status) => ({type: SET_STATUS, status});
 export const getStatus = (userId) => async (dispatch) => {
 
     let response = await profileAPI.getStatus(userId);
@@ -94,13 +94,13 @@ export const updateStatus = (status) => async (dispatch) => {
         if (response.data.resultCode === 0) {
             dispatch(setStatus(status));
         }
-    } catch(error) {
+    } catch (error) {
         console.log(error);
     }
 
 };
 
-export const savePhotoSuccess = (photos) => ({ type: SAVE_PHOTO_SUCCESS, photos });
+export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos});
 
 export const savePhoto = (file) => async (dispatch) => {
     let response = await profileAPI.savePhoto(file);
@@ -126,7 +126,7 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
 };
 
 
-export const addPost = (postText) => ({ type: ADD_POST, postText });
-export const deletePost = (postId) => ({ type: DELETE_POST, postId });
+export const addPost = (postText) => ({type: ADD_POST, postText});
+export const deletePost = (postId) => ({type: DELETE_POST, postId});
 
 export default profileReducer;

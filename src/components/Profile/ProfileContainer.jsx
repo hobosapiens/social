@@ -3,11 +3,11 @@ import Profile from "./Profile";
 import {connect} from "react-redux";
 import {
     getStatus,
-    updateStatus,
     getUserProfile,
+    requestPosts,
     savePhoto,
     saveProfile,
-    requestPosts
+    updateStatus
 } from "../../redux/profile-reducer";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
@@ -32,8 +32,7 @@ class ProfileContainer extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
 
-        if ( this.props.match.params.userId !== prevProps.match.params.userId )
-        {
+        if (this.props.match.params.userId !== prevProps.match.params.userId) {
             this.refreshProfile();
         }
     }

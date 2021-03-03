@@ -1,22 +1,17 @@
 import React from 'react'
-import {
-    follow,
-    unfollow,
-    setCurrentPage,
-    toggleFollowingProgress,
-    requestUsers,
-} from '../../redux/users-reducer';
+import {follow, requestUsers, setCurrentPage, toggleFollowingProgress, unfollow,} from '../../redux/users-reducer';
 import {connect} from 'react-redux';
 import s from './Users.module.css';
 import Users from './Users';
 import Preloader from '../Common/Preloader/Preloader';
 import Pagination from "../Common/Pagination/Pagination";
 import {
-    getCurrentPage, getFollowingInProgress,
+    getCurrentPage,
+    getFollowingInProgress,
     getIsFetching,
     getPageSize,
-    getUsers,
-    getTotalUsersCount
+    getTotalUsersCount,
+    getUsers
 } from "../../redux/users-selectors";
 
 // Контейнерная компонента которая делает AJAX запросы

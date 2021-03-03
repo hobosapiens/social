@@ -16,8 +16,11 @@ const ProfileDataForm = ({profile, handleSubmit, error}) => {
                     <b>About Me: </b> {createField('About me', 'aboutMe', Textarea, 'text', [required])}
                 </div>
                 <div className={s.job}>
-                    <div className={s.jobCheck}>{createField(null,'lookingForAJob', Input, 'checkbox', null, null,'jobCheckbox', 'Looking for a job:')}</div>
-                    <div className={s.jobSkills}><b>My skills: </b> {createField('Looking For A Job Description', 'lookingForAJobDescription', Textarea, 'text', [required])}</div>
+                    <div
+                        className={s.jobCheck}>{createField(null, 'lookingForAJob', Input, 'checkbox', null, null, 'jobCheckbox', 'Looking for a job:')}</div>
+                    <div className={s.jobSkills}><b>My
+                        skills: </b> {createField('Looking For A Job Description', 'lookingForAJobDescription', Textarea, 'text', [required])}
+                    </div>
                 </div>
             </div>
             <div className={s.profileEditContacts}>
@@ -28,7 +31,7 @@ const ProfileDataForm = ({profile, handleSubmit, error}) => {
                         </div>
                     )
                 })}
-                { error &&
+                {error &&
                 <div className={s2.summaryError}>
                     {error}
                 </div>

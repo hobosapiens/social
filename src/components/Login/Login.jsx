@@ -13,20 +13,20 @@ const LoginForm = ({handleSubmit, error, captchaURL}) => {
 
     return (
         <form onSubmit={handleSubmit}>
-                {createField('@email','email', Input, 'text', [required, maxLength30])}
-                {createField('Password','password', Input, 'password', [required, maxLength30])}
-                {createField(null,'rememberMe', Input, 'checkbox', null, null, 'rememberMe', 'Remember me')}
+            {createField('@email', 'email', Input, 'text', [required, maxLength30])}
+            {createField('Password', 'password', Input, 'password', [required, maxLength30])}
+            {createField(null, 'rememberMe', Input, 'checkbox', null, null, 'rememberMe', 'Remember me')}
 
-            { captchaURL &&
-                <div className={s.captcha}>
-                    <img src={captchaURL} alt="" className={s.captchaImg}/>
-                    <Field type={'text'} name={'captcha'} component={Input} validate={[required]}/>
-                </div>
+            {captchaURL &&
+            <div className={s.captcha}>
+                <img src={captchaURL} alt="" className={s.captchaImg}/>
+                <Field type={'text'} name={'captcha'} component={Input} validate={[required]}/>
+            </div>
             }
-            { error &&
-                <div className={s2.summaryError}>
-                    {error}
-                </div>
+            {error &&
+            <div className={s2.summaryError}>
+                {error}
+            </div>
             }
             <div>
                 <button type="submit">Login</button>
@@ -44,13 +44,13 @@ const Login = (props) => {
         props.logInUser(formData.email, formData.password, formData.rememberMe, formData.captcha);
     };
 
-    if(props.isAuth) {
-        return <Redirect to={'/profile'} />
+    if (props.isAuth) {
+        return <Redirect to={'/profile'}/>
     }
 
     return <div className={s.login}>
         <h1>Login</h1>
-        <LoginReduxForm onSubmit={onSubmit} logOutUser={props.logOutUser} captchaURL={props.captchaURL} />
+        <LoginReduxForm onSubmit={onSubmit} logOutUser={props.logOutUser} captchaURL={props.captchaURL}/>
     </div>
 };
 

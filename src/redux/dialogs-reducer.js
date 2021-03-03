@@ -39,16 +39,16 @@ const dialogsReducer = (state = initialState, action) => {
     }
 };
 
-export const addMessage = (newMessageText) => ({ type: ADD_MESSAGE, newMessageText });
+export const addMessage = (newMessageText) => ({type: ADD_MESSAGE, newMessageText});
 
-export const setMessages = (messages) => ({ type: SET_MESSAGES, messages });
+export const setMessages = (messages) => ({type: SET_MESSAGES, messages});
 export const requestMessages = () => async (dispatch) => {
 
     let response = await dialogsAPI.getDialogs();
     dispatch(setMessages(response.messages));
 };
 
-export const setDialogs = (dialogs) => ({ type: SET_DIALOGS, dialogs });
+export const setDialogs = (dialogs) => ({type: SET_DIALOGS, dialogs});
 
 export const requestDialogs = () => async (dispatch) => {
 

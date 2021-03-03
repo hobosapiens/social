@@ -9,8 +9,8 @@ const maxLength300 = maxLengthCreator(300);
 
 const PostForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit} >
-            <div className={s.postAdd} >
+        <form onSubmit={props.handleSubmit}>
+            <div className={s.postAdd}>
                 <Field
                     name={'postText'}
                     placeholder={'Post text...'}

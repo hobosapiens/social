@@ -5,5 +5,5 @@ import MainApp from './App';
 import './index.css';
 
 ReactDOM.render(
-    <MainApp />, document.getElementById('root')
+    <MainApp/>, document.getElementById('root')
 );

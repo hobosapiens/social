@@ -15,7 +15,7 @@ const MyPosts = React.memo((props) => {
             <div className={s.postsTitle}>
                 <h3>My posts</h3>
             </div>
-            <AddPostForm addPost={props.addPost} />
+            <AddPostForm addPost={props.addPost}/>
             {postsElements}
         </div>
     )

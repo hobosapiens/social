@@ -13,13 +13,13 @@ const navbarReducer = (state = initialState, action) => {
             // копируем старый стейт и склеиваем копию старых users с теми, которые пришли в action.users
             // return { ...state, users: [...state.users, ...action.users]};
             // копируем старый стейт и перетераем users на тех которые пришли в action.users
-            return { ...state, friendList: [ ...action.friendList ]};
+            return {...state, friendList: [...action.friendList]};
         default:
             return state;
     }
 };
 
-export const setFriends = (friendList) => ({ type: SET_FRIENDS, friendList });
+export const setFriends = (friendList) => ({type: SET_FRIENDS, friendList});
 
 export const requestFriends = () => async (dispatch) => {
 

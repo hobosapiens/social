@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
 import Settings from "./Settings";
-import {profileAPI} from "../../api/api";
 
 class SettingsContainer extends React.Component {
     // componentDidMount() {
@@ -42,13 +41,11 @@ class SettingsContainer extends React.Component {
 
     render() {
         return (
-            <Settings />
+            <Settings/>
         )
     }
 }
 
-let mapStateToProps = (state) => ({
-
-});
+let mapStateToProps = (state) => ({});
 
 export default connect(mapStateToProps, {})(SettingsContainer);

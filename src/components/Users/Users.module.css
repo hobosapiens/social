@@ -31,7 +31,7 @@
 }
 
 .user:hover .userInnerWrap {
-    box-shadow: 3px 3px 3px 3px rgba(87,0,0,0.1);
+    box-shadow: 3px 3px 3px 3px rgba(87, 0, 0, 0.1);
     top: -3px;
     left: -3px;
 }
