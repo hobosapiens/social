@@ -7,7 +7,7 @@ import {createField, Input} from "../Common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../utils/validators/validators";
 import {Redirect} from "react-router-dom";
 
-const maxLength30 = maxLengthCreator(30);
+const maxLength30 = maxLengthCreator(100);
 
 const LoginForm = ({handleSubmit, error, captchaURL}) => {
 
