@@ -1,4 +1,4 @@
-## Учебный проект социальная сеть
+## Учебный проект социальная сеть [В ПРОЦЕССЕ]
 
 GitHub pages: https://hobosapiens.github.io/social/
 
@@ -10,7 +10,7 @@ GitHub pages: https://hobosapiens.github.io/social/
 В частности я узнал о потоке данных в React - Redux приложениях, о работе с этими данными, о state менеджменте, взаимодействие с REST API и.т.д.
 <br />
 <br />
-### Study project social network
+### Study project social network [IN PROGRESS]
 
 GitHub pages: https://hobosapiens.github.io/social/
 
